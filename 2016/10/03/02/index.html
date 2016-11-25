@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="基本介绍Githug is designed to give you a practical way of learning Git. It has a series of levels, each requiring you to use git commands to arrive at a correct answer.
+Githug把可能会用到的git的场景实例化。它有一系列的关卡，每个都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【教程】<githug> --> window7环境下安装传说中的git游戏 'githug' [一]">
+<meta property="og:url" content="http://yoursite.com/2016/10/03/02/index.html">
+<meta property="og:site_name" content="f的个人博客">
+<meta property="og:description" content="基本介绍Githug is designed to give you a practical way of learning Git. It has a series of levels, each requiring you to use git commands to arrive at a correct answer.
+Githug把可能会用到的git的场景实例化。它有一系列的关卡，每个都">
+<meta property="og:image" content="http://yoursite.com/images/02_1.PNG">
+<meta property="og:updated_time" content="2016-11-25T06:28:35.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【教程】<githug> --> window7环境下安装传说中的git游戏 'githug' [一]">
+<meta name="twitter:description" content="基本介绍Githug is designed to give you a practical way of learning Git. It has a series of levels, each requiring you to use git commands to arrive at a correct answer.
+Githug把可能会用到的git的场景实例化。它有一系列的关卡，每个都">
+<meta name="twitter:image" content="http://yoursite.com/images/02_1.PNG">
+    
+    
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32" />
+    
+    <!-- title -->
+    <title>【教程】&lt;githug&gt; --&gt; window7环境下安装传说中的git游戏 &#39;githug&#39; [一]</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content post width mx-auto px2 my4">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <span class="top-subtitle">
+          <a href="/archives">Writing</a>
+      </span>
+      
+    <h1 class="posttitle" itemprop="name headline">
+        【教程】&lt;githug&gt; --&gt; window7环境下安装传说中的git游戏 &#39;githug&#39; [一]
+    </h1>
+
+
+
+      <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">f的个人博客</span>
+          </span>
+          
+    <div class="postdate">
+        <time datetime="2016-10-03T09:01:00.000Z" itemprop="datePublished">2016-10-03</time>
+    </div>
+
+
+          
+
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p><code>Githug</code> is designed to give you a practical way of learning Git.<br> It has a series of levels, each requiring you to use git commands to arrive at a correct answer.</p>
+<p>Githug把可能会用到的git的场景实例化。<br>它有一系列的关卡，每个都需要用git命令到一个正确的答案。</p>
+<p><a href="https://github.com/Gazler/githug" target="_blank" rel="external">github托管地址</a></p>
+<h2 id="Git-fast-scalable-distributed-revision-control-system"><a href="#Git-fast-scalable-distributed-revision-control-system" class="headerlink" title="Git - fast, scalable, distributed revision control system"></a>Git - fast, scalable, distributed revision control system</h2><p>Git 是一个版本控制管理工具。  </p>
+<p><a href="https://git-for-windows.github.io/" target="_blank" rel="external">下载地址</a></p>
+<p><a href="https://github.com/git-for-windows/git" target="_blank" rel="external">github托管地址</a></p>
+<h3 id="git安装与环境配置"><a href="#git安装与环境配置" class="headerlink" title="git安装与环境配置"></a>git安装与环境配置</h3><ol>
+<li>下载windows版本的git，一路默认设置安装即可。</li>
+<li>这时你打开windows的cmd，在里面打git命令会提示“不是内部或外部命令，也不是可运行的程序”，想要直接在windows的cmd里使用git命令要配置环境变量：<ul>
+<li>找到git安装路径中bin的位置，例如我的路径就是“C:\Program Files\Git;”。</li>
+<li>右键“计算机”-&gt;“属性”-&gt;“高级系统设置”-&gt;“环境变量”-&gt;找到path-&gt;“编辑”path</li>
+<li>将之前找到的bin路径复制到path中（注意：path中，每个路径之间要以英文“;”作为间隔）-&gt;保存</li>
+</ul>
+</li>
+<li><p>最后确认一下是否有 git 环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git --version</div></pre></td></tr></table></figure>
+<p>如果能输出 <code>git version 2.10.1.windows.1</code> git版本号（版本不一定一致），说明没有问题。</p>
+</li>
+</ol>
+<h2 id="Ruby-A-Programmer’s-Best-Friend"><a href="#Ruby-A-Programmer’s-Best-Friend" class="headerlink" title="Ruby A Programmer’s Best Friend"></a>Ruby A Programmer’s Best Friend</h2><p>githug 是一个 ruby 程序，运行的 githug 需要 ruby 运行环境。安装的时候注意勾选配置环境变量。</p>
+<p><a href="http://www.ruby-lang.org/zh_cn/downloads/" target="_blank" rel="external">下载地址</a></p>
+<p><a href="https://github.com/ruby/ruby" target="_blank" rel="external">github托管地址</a></p>
+<h2 id="RubyGems-镜像-Ruby-China"><a href="#RubyGems-镜像-Ruby-China" class="headerlink" title="RubyGems 镜像- Ruby China"></a>RubyGems 镜像- Ruby China</h2><p><a href="https://rubygems.org/" target="_blank" rel="external">RubyGems</a>一直以来在国内都非常难访问到,默认的 rubygems.org的源被墙掉了，因此需要变更默认的gem源。<br>而原来<a href="ruby.taobao.org">淘宝镜像</a>的已不再维护。所以需要 [Ruby China 社区维护的镜像源]<a href="https://gems.ruby-china.org/" target="_blank" rel="external">RubyGems 镜像</a>，你可以用此代替官方版本。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ol>
+<li><p>需要比较新的 RubyGems 版本，2.6.x 以上。</p>
+<ul>
+<li><p>可以先确定一下版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem -v</div></pre></td></tr></table></figure>
+</li>
+<li><p>版本升级</p>
+<ul>
+<li><p>这里需要设置代理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem update --system -http-proxy http://proxy.mysite.com:8080</div></pre></td></tr></table></figure>
+</li>
+<li><p>当然窝这个渣渣并没有弄成功 所以 我直接去了<a href="https://rubygems.org/" target="_blank" rel="external">RubyGems</a>下载了最新版。</p>
+<ul>
+<li>解压到一个目录，然后cd到目录内</li>
+<li>输入命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby setup.rb</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>修改成为镜像源地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</div><div class="line">$ gem sources -l</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>确保返回的只有<code>https://gems.ruby-china.org</code></p>
+<p>另：如果遇到SSL证书的问题，而又无法解决，直接使用<code>http://gems.ruby-china.org</code>避免SSL的问题。</p>
+<h2 id="安装gitbug"><a href="#安装gitbug" class="headerlink" title="安装gitbug"></a>安装gitbug</h2><p>执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install githug</div></pre></td></tr></table></figure></p>
+<p>执行gitbug命令</p>
+<p><img src="/images/02_1.PNG" alt="02_1.PNG"></p>
+<p>好了，github已经装好了:-D<br>来吧，玩耍吧，反正有，大把时光！</p>
+
+    </div>
+  </article>
+  
+
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2016 f的个人博客
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives">Writing</a></li>
+        <li><a href="http://github.com/probberechts">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
