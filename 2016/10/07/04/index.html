@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="level 11questionName: rmLevel: 11Difficulty: **
+A file has been removed from the working tree, however the file was not removed from the repository.  Find out what this file was and remove it.
+answer1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【教程】<githug> --> git游戏 'githug'(level 11 - level 20) [三]">
+<meta property="og:url" content="http://yoursite.com/2016/10/07/04/index.html">
+<meta property="og:site_name" content="f的个人博客">
+<meta property="og:description" content="level 11questionName: rmLevel: 11Difficulty: **
+A file has been removed from the working tree, however the file was not removed from the repository.  Find out what this file was and remove it.
+answer1">
+<meta property="og:updated_time" content="2016-11-26T06:54:04.745Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【教程】<githug> --> git游戏 'githug'(level 11 - level 20) [三]">
+<meta name="twitter:description" content="level 11questionName: rmLevel: 11Difficulty: **
+A file has been removed from the working tree, however the file was not removed from the repository.  Find out what this file was and remove it.
+answer1">
+    
+    
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32" />
+    
+    <!-- title -->
+    <title>【教程】&lt;githug&gt; --&gt; git游戏 &#39;githug&#39;(level 11 - level 20) [三]</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content post width mx-auto px2 my4">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <span class="top-subtitle">
+          <a href="/archives">Writing</a>
+      </span>
+      
+    <h1 class="posttitle" itemprop="name headline">
+        【教程】&lt;githug&gt; --&gt; git游戏 &#39;githug&#39;(level 11 - level 20) [三]
+    </h1>
+
+
+
+      <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">f的个人博客</span>
+          </span>
+          
+    <div class="postdate">
+        <time datetime="2016-10-07T07:27:00.000Z" itemprop="datePublished">2016-10-07</time>
+    </div>
+
+
+          
+
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <h2 id="level-11"><a href="#level-11" class="headerlink" title="level 11"></a>level 11</h2><h3 id="question"><a href="#question" class="headerlink" title="question"></a>question</h3><p>Name: rm<br>Level: 11<br>Difficulty: **</p>
+<p>A file has been removed from the working tree, however the file was not removed from the repository.  Find out what this file was and remove it.</p>
+<h3 id="answer"><a href="#answer" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">$ git rm deleteme.rb</div></pre></td></tr></table></figure>
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><p><code>git rm [file1] [file2] ...</code>删除工作区文件，并且将这次删除放入暂存区。<br><a href="http://blog.csdn.net/hudashi/article/details/7664429" target="_blank" rel="external">git rm简介</a></p>
+<h2 id="level-12"><a href="#level-12" class="headerlink" title="level 12"></a>level 12</h2><h3 id="question-1"><a href="#question-1" class="headerlink" title="question"></a>question</h3><p>Name: rm_cached<br>Level: 12<br>Difficulty: **</p>
+<p>A file has accidentally been added to your staging area, find out which file and remove it from the staging area.  <em>NOTE</em> Do not remove the file from the file system, only from git.</p>
+<h3 id="answer-1"><a href="#answer-1" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">$ git rm --cached deleteme.rb</div></pre></td></tr></table></figure>
+<h3 id="相关-1"><a href="#相关-1" class="headerlink" title="相关"></a>相关</h3><p><code>git rm --cached [file]</code> 停止追踪指定文件，但该文件会保留在工作区。</p>
+<h2 id="level-13"><a href="#level-13" class="headerlink" title="level 13"></a>level 13</h2><h3 id="question-2"><a href="#question-2" class="headerlink" title="question"></a>question</h3><p>Name: stash<br>Level: 13<br>Difficulty: **</p>
+<p>You’ve made some changes and want to work on them later. You should save them, but don’t commit them.</p>
+<h3 id="answer-2"><a href="#answer-2" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git stash</div></pre></td></tr></table></figure>
+<h3 id="相关-2"><a href="#相关-2" class="headerlink" title="相关"></a>相关</h3><p><code>git stash</code> 用于保存和恢复工作进度。</p>
+<ul>
+<li><code>git stash</code> 保存当前的工作进度。会分别对暂存区和工作区的状态进行保存。</li>
+<li><code>git stash list</code> 显示进度列表。</li>
+<li><code>git stash pop [--index] [&lt;stash&gt;]</code> 如果不使用任何参数，会恢复最新保存的工作进度，并将恢复的工作进度从存储的工作进度列表中清除。<br>如果提供<stash>参数（来自git stash list显示的列表），则从该<stash>中恢复。恢复完毕 也将从进度列表中删除<stash>。选项–index除了恢复工作区的文件外，还尝试恢复暂存区。</stash></stash></stash></li>
+<li><code>git stash [save [--patch] [-k|--[no]keep-index] [-q|--quiet] [&lt;message&gt;]]</code> 这是第一条命令的完整版。<ul>
+<li>使用参数<code>--patch</code>会显示工作区和HEAD的差异，通过对差异文件的编辑决定在进度中最终要保存的工作区的内容，通过编辑差异文件可以在进度中排除无关内容。</li>
+<li>使用<code>-k</code>或者<code>--keep-index</code>参数，在保存进度后不会将暂存区重置。默认会将暂存区和工作区强制重置。</li>
+</ul>
+</li>
+<li><code>git stash apply [--index] [&lt;stash&gt;]</code> 除了不删除恢复的进度之外，其余和git stash pop 命令一样。</li>
+<li><code>git stash drop [&lt;stash&gt;]</code> 删除一个存储的进度。默认删除最新的进度。</li>
+<li><code>git stash clear</code> 删除所有存储的进度。</li>
+<li><code>git stash branch &lt;branchname&gt; &lt;stash&gt;</code> 基于进度创建分支。</li>
+</ul>
+<p><a href="http://www.cppblog.com/deercoder/archive/2011/11/13/160007.aspx" target="_blank" rel="external">Git Stash用法</a></p>
+<h2 id="level-14"><a href="#level-14" class="headerlink" title="level 14"></a>level 14</h2><h3 id="question-3"><a href="#question-3" class="headerlink" title="question"></a>question</h3><p>Name: rename<br>Level: 14<br>Difficulty: <em>*</em></p>
+<p>We have a file called <code>oldfile.txt</code>. We want to rename it to <code>newfile.txt</code> and stage this change.</p>
+<h3 id="answer-3"><a href="#answer-3" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git mv oldfile.txt newfile.txt</div></pre></td></tr></table></figure>
+<h3 id="相关-3"><a href="#相关-3" class="headerlink" title="相关"></a>相关</h3><p><code>git mv</code> 重命名文件</p>
+<h2 id="level-15"><a href="#level-15" class="headerlink" title="level 15"></a>level 15</h2><h3 id="question-4"><a href="#question-4" class="headerlink" title="question"></a>question</h3><p>Name: restructure<br>Level: 15<br>Difficulty: <em>*</em></p>
+<p>You added some files to your repository, but now realize that your project needs to be restructured.  Make a new folder named <code>src</code> and using Git move all of the .html files into this folder.</p>
+<h3 id="answer-4"><a href="#answer-4" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="相关-4"><a href="#相关-4" class="headerlink" title="相关"></a>相关</h3><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">常用 Git 命令清单</a><br><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a><br><a href="http://www.cnblogs.com/cspku/articles/Git_cmds.html" target="_blank" rel="external">Git常用命令</a><br><a href="http://www.open-open.com/lib/view/open1453249884901.html" target="_blank" rel="external">githug史上最全攻略</a><br><a href="http://fancyoung.com/blog/githug-cheat-sheet/" target="_blank" rel="external">Githug通关全攻略</a><br><a href="https://git-scm.com/docs/" target="_blank" rel="external">Git –distributed-is-the-new-centralized</a></p>
+
+    </div>
+  </article>
+  
+
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2016 f的个人博客
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives">Writing</a></li>
+        <li><a href="http://github.com/probberechts">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
