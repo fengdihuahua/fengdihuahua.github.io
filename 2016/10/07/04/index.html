@@ -16,7 +16,7 @@ answer1">
 <meta property="og:description" content="level 11questionName: rmLevel: 11Difficulty: **
 A file has been removed from the working tree, however the file was not removed from the repository.  Find out what this file was and remove it.
 answer1">
-<meta property="og:updated_time" content="2016-11-26T06:54:04.745Z">
+<meta property="og:updated_time" content="2016-11-26T12:38:05.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【教程】<githug> --> git游戏 'githug'(level 11 - level 20) [三]">
 <meta name="twitter:description" content="level 11questionName: rmLevel: 11Difficulty: **
@@ -104,8 +104,56 @@ answer1">
 <h3 id="相关-3"><a href="#相关-3" class="headerlink" title="相关"></a>相关</h3><p><code>git mv</code> 重命名文件</p>
 <h2 id="level-15"><a href="#level-15" class="headerlink" title="level 15"></a>level 15</h2><h3 id="question-4"><a href="#question-4" class="headerlink" title="question"></a>question</h3><p>Name: restructure<br>Level: 15<br>Difficulty: <em>*</em></p>
 <p>You added some files to your repository, but now realize that your project needs to be restructured.  Make a new folder named <code>src</code> and using Git move all of the .html files into this folder.</p>
-<h3 id="answer-4"><a href="#answer-4" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<h3 id="相关-4"><a href="#相关-4" class="headerlink" title="相关"></a>相关</h3><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">常用 Git 命令清单</a><br><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a><br><a href="http://www.cnblogs.com/cspku/articles/Git_cmds.html" target="_blank" rel="external">Git常用命令</a><br><a href="http://www.open-open.com/lib/view/open1453249884901.html" target="_blank" rel="external">githug史上最全攻略</a><br><a href="http://fancyoung.com/blog/githug-cheat-sheet/" target="_blank" rel="external">Githug通关全攻略</a><br><a href="https://git-scm.com/docs/" target="_blank" rel="external">Git –distributed-is-the-new-centralized</a></p>
+<h3 id="answer-4"><a href="#answer-4" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mkdir src</div><div class="line">$ git mv *.html src/</div></pre></td></tr></table></figure>
+<h3 id="相关-4"><a href="#相关-4" class="headerlink" title="相关"></a>相关</h3><p><code>mkdir</code>(make directory) Mkdir 是一个用来在 Linux 系统下创建目录的命令。此命令属于内建命令。</p>
+<ul>
+<li><code>mkdir test1</code> 默认情况下不带任何参数运行mkdir命令会在当前目录下创建目录。</li>
+<li><code>mkdir test2[ test22 test222]</code> 创建多个目录。</li>
+<li><code>mkdir -p test3/test33</code> 递归创建多个目录。例如创建的目录包含子目录，如果找不到父目录，那么这个参数会首先帮助创建父目录。</li>
+<li><code>mkdir -m=r test4</code> 使用-m参数，给生成的新目录设置权限。参考：<a href="http://www.cnblogs.com/MartinChentf/p/6076075.html" target="_blank" rel="external">工作中常用Linux命令：mkdir命令</a></li>
+<li><code>mkdir -v test5</code> 创建目录显示信息。</li>
+</ul>
+<p>参考：<br><a href="http://www.cnblogs.com/peida/archive/2012/10/25/2738271.html" target="_blank" rel="external">每天一个linux命令（4）：mkdir命令</a></p>
+<h2 id="level-16"><a href="#level-16" class="headerlink" title="level 16"></a>level 16</h2><h3 id="question-5"><a href="#question-5" class="headerlink" title="question"></a>question</h3><p>Name: log<br>Level: 16<br>Difficulty: **</p>
+<p>You will be asked for the hash of most recent commit.  You will need to investigate the logs of the repository for this.</p>
+<h3 id="answer-5"><a href="#answer-5" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span></div></pre></td></tr></table></figure>
+<p>答案为：34b2fd7(commit后 前7位)</p>
+<h3 id="相关-5"><a href="#相关-5" class="headerlink" title="相关"></a>相关</h3><p><code>git log</code> 显示当前分支的版本历史。</p>
+<ul>
+<li><code>git log --stat</code> 显示commit历史，以及每次commit发生变更的文件</li>
+<li><code>git log -s [keyword]</code> 搜索提交历史，根据关键词</li>
+<li><code>git log -p [file]</code> 显示指定文件相关的每一次diff</li>
+<li><code>git log -5 --pretty --oneline</code> 显示过去5次提交</li>
+<li><code>git log --follow [file]</code><br><code>git whatchanged [file]</code> 显示某个文件的版本历史，包括文件改名</li>
+<li><code>git log [tag] HEAD --pretty-format:%s</code> 显示某个commit之后的所有变动，每个commit占据一行</li>
+<li><code>git log [tag] HEAD --grep feature</code> 显示某个commit之后的所有变动，其“提交说明”必须符合搜索条件</li>
+</ul>
+<h2 id="level-17"><a href="#level-17" class="headerlink" title="level 17"></a>level 17</h2><h3 id="question-6"><a href="#question-6" class="headerlink" title="question"></a>question</h3><p>Name: tag<br>Level: 17<br>Difficulty: **</p>
+<p>We have a git repo and we want to tag the current commit with <code>new_tag</code>.</p>
+<h3 id="answer-6"><a href="#answer-6" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git tag new_tag</div></pre></td></tr></table></figure>
+<h3 id="相关-6"><a href="#相关-6" class="headerlink" title="相关"></a>相关</h3><ul>
+<li><code>git tag</code> 列出所有的tag，在控制台打印出当前仓库的所有标签</li>
+<li><code>git tag [tag]</code> 新建一个tag在当前commit</li>
+<li><code>git tag [tag] [commit]</code> 新建一个tag在指定commit</li>
+<li><code>git tag d [tag]</code> 删除本地tag</li>
+</ul>
+<h2 id="level-18"><a href="#level-18" class="headerlink" title="level 18"></a>level 18</h2><h3 id="question-7"><a href="#question-7" class="headerlink" title="question"></a>question</h3><p>Name: push_tags<br>Level: 18<br>Difficulty: **</p>
+<p>There are tags in the repository that aren’t pushed into remote repository. Push them now.</p>
+<h3 id="answer-7"><a href="#answer-7" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push --tags</div></pre></td></tr></table></figure>
+<h3 id="相关-7"><a href="#相关-7" class="headerlink" title="相关"></a>相关</h3><p>默认 git push 不会罢 tag 标签传送到远端服务器上，只有通过显示命令才能分享标签到远端仓库。</p>
+<ul>
+<li><code>git push origin [tagname]</code> push 单个 tag</li>
+<li><code>git push [origin] --tags</code> push 所有 tag</li>
+</ul>
+<h2 id="level-19"><a href="#level-19" class="headerlink" title="level 19"></a>level 19</h2><h3 id="question-8"><a href="#question-8" class="headerlink" title="question"></a>question</h3><p>Name: commit_amend<br>Level: 19<br>Difficulty: **</p>
+<p>The <code>README</code> file has been committed, but it looks like the file <code>forgotten_file.rb</code> was missing from the commit.  Add the file and amend your previous commit to include it.</p>
+<h3 id="answer-8"><a href="#answer-8" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add forgotten_file.rb</div><div class="line">$ git commit --amend -m <span class="string">'message'</span></div></pre></td></tr></table></figure>
+<h3 id="相关-8"><a href="#相关-8" class="headerlink" title="相关"></a>相关</h3><p><code>git commit --amend</code> 合并缓存区的修改和最近的一次commit, 然后用生成的新的commit替换掉老的. 如果缓存区没有内容, 那么利用amend可以修改上一次commit的描述.<br><a href="http://www.cnblogs.com/irocker/p/git-commit--amend.html" target="_blank" rel="external">[译]git commit –amend</a></p>
+<h2 id="level-20"><a href="#level-20" class="headerlink" title="level 20"></a>level 20</h2><h3 id="question-9"><a href="#question-9" class="headerlink" title="question"></a>question</h3><p>Name: commit_in_future<br>Level: 20<br>Difficulty: **</p>
+<p>Commit your changes with the future date (e.g. tomorrow).</p>
+<h3 id="answer-9"><a href="#answer-9" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit --date 2016.10.08 -m <span class="string">'message'</span></div></pre></td></tr></table></figure>
+<h3 id="相关-9"><a href="#相关-9" class="headerlink" title="相关"></a>相关</h3><p><code>git commit --date &lt;date&gt;</code> 修改提交时间</p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">常用 Git 命令清单</a><br><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a><br><a href="http://www.cnblogs.com/cspku/articles/Git_cmds.html" target="_blank" rel="external">Git常用命令</a><br><a href="http://www.open-open.com/lib/view/open1453249884901.html" target="_blank" rel="external">githug史上最全攻略</a><br><a href="http://fancyoung.com/blog/githug-cheat-sheet/" target="_blank" rel="external">Githug通关全攻略</a><br><a href="https://git-scm.com/docs/" target="_blank" rel="external">Git –distributed-is-the-new-centralized</a></p>
 
     </div>
   </article>
