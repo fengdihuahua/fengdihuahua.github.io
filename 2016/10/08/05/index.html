@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="level 21questionName: resetLevel: 21Difficulty: **
+There are two files to be committed.  The goal was to add each file as a separate commit, however both were added by accident.  Unstage the file to_c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【教程】<githug> --> git游戏 'githug'(level 21 - level 30) [四]">
+<meta property="og:url" content="http://yoursite.com/2016/10/08/05/index.html">
+<meta property="og:site_name" content="f的个人博客">
+<meta property="og:description" content="level 21questionName: resetLevel: 21Difficulty: **
+There are two files to be committed.  The goal was to add each file as a separate commit, however both were added by accident.  Unstage the file to_c">
+<meta property="og:updated_time" content="2016-11-27T08:06:07.565Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【教程】<githug> --> git游戏 'githug'(level 21 - level 30) [四]">
+<meta name="twitter:description" content="level 21questionName: resetLevel: 21Difficulty: **
+There are two files to be committed.  The goal was to add each file as a separate commit, however both were added by accident.  Unstage the file to_c">
+    
+    
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32" />
+    
+    <!-- title -->
+    <title>【教程】&lt;githug&gt; --&gt; git游戏 &#39;githug&#39;(level 21 - level 30) [四]</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content post width mx-auto px2 my4">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <span class="top-subtitle">
+          <a href="/archives">Writing</a>
+      </span>
+      
+    <h1 class="posttitle" itemprop="name headline">
+        【教程】&lt;githug&gt; --&gt; git游戏 &#39;githug&#39;(level 21 - level 30) [四]
+    </h1>
+
+
+
+      <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">f的个人博客</span>
+          </span>
+          
+    <div class="postdate">
+        <time datetime="2016-10-08T05:01:00.000Z" itemprop="datePublished">2016-10-08</time>
+    </div>
+
+
+          
+
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <h2 id="level-21"><a href="#level-21" class="headerlink" title="level 21"></a>level 21</h2><h3 id="question"><a href="#question" class="headerlink" title="question"></a>question</h3><p>Name: reset<br>Level: 21<br>Difficulty: **</p>
+<p>There are two files to be committed.  The goal was to add each file as a separate commit, however both were added by accident.  Unstage the file <code>to_commit_second.rb</code> using the reset command (don’t commit anything).</p>
+<h3 id="answer"><a href="#answer" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">$ git reset HEAD to_commit_second.rb</div></pre></td></tr></table></figure>
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><p>reset 命令移动 HEAD 到当前分支的一个 commit， 这可以用来撤销当前分支的一些 commit</p>
+<ol>
+<li><code>git reset [-q] [commit] [--] &lt;paths&gt;</code> 第一种用法是不会重置引用的，即不会修改master文件。</li>
+<li><code>git reset [--soft | --mixed | --hard | --merge | --keep] [-q] [&lt;commit&gt;]</code><br>第二种用法不使用&lt; paths &gt; 则会重置引用，并且参数不同决定是否覆盖暂存区和工作区：<ul>
+<li><code>git reset -mixed</code> 此为默认方式，不带任何参数的git reset，会退到某个版本只保留源码，回退commit和index信息，staged snapshot 被更新， working directory 未被更改。</li>
+<li><code>git reset -soft</code> 回退到某个版本，只回退了commit信息，staged snapshot 和 working directory 都未被改变 (建议在命令行执行后，再输入 git status 查看状态)</li>
+<li><code>git reset -hard</code> 彻底回退到某个版本，本地的源码也会变为上一个版本的内容，即staged snapshot 和 working directory 都将回退</li>
+</ul>
+</li>
+</ol>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#回退所有内容到上一版本 HEAD^的意思是最近一次的提交</span></div><div class="line">git reset HEAD^</div><div class="line"><span class="comment">#回退a.py这个文件的版本到上一个版本 </span></div><div class="line">git reset HEAD^ a.py </div><div class="line"><span class="comment">#向前回退到第3个版本 </span></div><div class="line">git reset –soft HEAD~3 </div><div class="line"><span class="comment">#将本地的状态回退到和远程的一样 </span></div><div class="line">git reset –hard origin/master </div><div class="line"><span class="comment">#回退到某个版本 </span></div><div class="line">git reset 38679ed </div><div class="line"><span class="comment">#回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit </span></div><div class="line">git revert HEAD</div></pre></td></tr></table></figure></p>
+<p>参考：<a href="http://www.360doc.com/content/11/0117/18/2036337_87176886.shtml" target="_blank" rel="external">Git版本恢复命令reset</a></p>
+<h2 id="level-22"><a href="#level-22" class="headerlink" title="level 22"></a>level 22</h2><h3 id="question-1"><a href="#question-1" class="headerlink" title="question"></a>question</h3><p>Name: reset_soft<br>Level: 22<br>Difficulty: **</p>
+<p>You committed too soon. Now you want to undo the last commit, while keeping the index.</p>
+<h3 id="answer-1"><a href="#answer-1" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --soft HEAD^</div></pre></td></tr></table></figure>
+<h3 id="相关-1"><a href="#相关-1" class="headerlink" title="相关"></a>相关</h3><p>见上</p>
+<h2 id="level-23"><a href="#level-23" class="headerlink" title="level 23"></a>level 23</h2><h3 id="question-2"><a href="#question-2" class="headerlink" title="question"></a>question</h3><p>Name: checkout_file<br>Level: 23<br>Difficulty: <em>*</em></p>
+<p>A file has been modified, but you don’t want to keep the modification.  Checkout the <code>config.rb</code> file from the last commit.</p>
+<h3 id="answer-2"><a href="#answer-2" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout config.rb</div></pre></td></tr></table></figure>
+<h3 id="相关-2"><a href="#相关-2" class="headerlink" title="相关"></a>相关</h3><p><code>git checkout</code> 检出。</p>
+<ol>
+<li>创建分支 <code>git branch branchName</code> </li>
+<li>切换分支 <code>git checkout branchName</code></li>
+<li>上面两个命令可以合成一个命令 <code>git checkout -b branchName</code></li>
+</ol>
+<p>参考：<br><a href="http://www.tuicool.com/articles/A3Mn6f" target="_blank" rel="external">git checkout 命令详解</a><br><a href="http://www.open-open.com/lib/view/open1328069889514.html" target="_blank" rel="external">Git详解之三 Git分支</a></p>
+<h2 id="level-24"><a href="#level-24" class="headerlink" title="level 24"></a>level 24</h2><h3 id="question-3"><a href="#question-3" class="headerlink" title="question"></a>question</h3><p>Name: remote<br>Level: 24<br>Difficulty: **</p>
+<p>This project has a remote repository.  Identify it.</p>
+<h3 id="answer-3"><a href="#answer-3" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote -v</div></pre></td></tr></table></figure>
+<p>答案：my_remote_repo</p>
+<h3 id="相关-3"><a href="#相关-3" class="headerlink" title="相关"></a>相关</h3><ul>
+<li><code>git remote</code> 不带参数，列出已经存在的远程分支</li>
+<li><code>git remote -v</code> –verbose 列出详细信息，在每个名字后面</li>
+<li><code>git clone -o jQuery https://github.com/jquery/jquery.git</code><br><code>git remote</code> 想用其他的主机名 需要用 git clone命令的 -o 选项指定</li>
+<li><code>git remote show &lt;主机名&gt;</code> 可以查看主机的详细信息</li>
+<li><code>git remote add &lt;主机名&gt; &lt;网址&gt;</code> 添加远程主机</li>
+<li><code>git remote rm &lt;主机名&gt;</code> 删除远程主机</li>
+<li><code>git remore rename &lt;原主机名&gt; &lt;新主机名&gt;</code> 远程主机的改名</li>
+</ul>
+<p><code>$ tail .git/config</code> 查看remote信息。</p>
+<h2 id="level-25"><a href="#level-25" class="headerlink" title="level 25"></a>level 25</h2><h3 id="question-4"><a href="#question-4" class="headerlink" title="question"></a>question</h3><p>Name: remote_url<br>Level: 25<br>Difficulty: **</p>
+<p>The remote repositories have a url associated to them.  Please enter the url of remote_location.</p>
+<h3 id="answer-4"><a href="#answer-4" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote -v</div></pre></td></tr></table></figure>
+<p>答案：<code>https://github.com/githug/not_a_repo</code></p>
+<h3 id="相关-4"><a href="#相关-4" class="headerlink" title="相关"></a>相关</h3><p>见上</p>
+<h2 id="level-26"><a href="#level-26" class="headerlink" title="level 26"></a>level 26</h2><h3 id="question-5"><a href="#question-5" class="headerlink" title="question"></a>question</h3><p>Name: pull<br>Level: 26<br>Difficulty: **</p>
+<p>You need to pull changes from your origin repository.</p>
+<h3 id="answer-5"><a href="#answer-5" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master</div></pre></td></tr></table></figure>
+<h3 id="相关-5"><a href="#相关-5" class="headerlink" title="相关"></a>相关</h3><p><code>git push origin master</code> 的意思就是上传本地当前分支代码到master分支。<br>参考：<br><a href="http://www.yiibai.com/git/git_pull.html" target="_blank" rel="external">git pull</a></p>
+<h2 id="level-27"><a href="#level-27" class="headerlink" title="level 27"></a>level 27</h2><h3 id="question-6"><a href="#question-6" class="headerlink" title="question"></a>question</h3><p>Name: remote_add<br>Level: 27<br>Difficulty: **</p>
+<p>Add a remote repository called <code>origin</code> with the url <a href="https://github.com/githug/githug" target="_blank" rel="external">https://github.com/githug/githug</a></p>
+<h3 id="answer-6"><a href="#answer-6" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin https://github.com/githug/githug</div></pre></td></tr></table></figure>
+<h3 id="相关-6"><a href="#相关-6" class="headerlink" title="相关"></a>相关</h3><p>见 level 24</p>
+<h2 id="level-28"><a href="#level-28" class="headerlink" title="level 28"></a>level 28</h2><h3 id="question-7"><a href="#question-7" class="headerlink" title="question"></a>question</h3><p>Name: push<br>Level: 28<br>Difficulty: <em>*</em></p>
+<p>Your local master branch has diverged from the remote origin/master branch. Rebase your commit onto origin/master and push it to remote.</p>
+<h3 id="answer-7"><a href="#answer-7" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git rebase origin/master</div><div class="line">$ git push origin master</div></pre></td></tr></table></figure>
+<h3 id="相关-7"><a href="#相关-7" class="headerlink" title="相关"></a>相关</h3><p>git rebase用于把一个分支的修改合并到当前分支。<br>&lt;和merge区别占位&gt;</p>
+<h2 id="level-29"><a href="#level-29" class="headerlink" title="level 29"></a>level 29</h2><h3 id="question-8"><a href="#question-8" class="headerlink" title="question"></a>question</h3><p>Name: diff<br>Level: 29<br>Difficulty: **</p>
+<p>There have been modifications to the <code>app.rb</code> file since your last commit.  Find out which line has changed.</p>
+<h3 id="answer-8"><a href="#answer-8" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff app.rb</div></pre></td></tr></table></figure>
+<p>答案：26</p>
+<h3 id="相关-8"><a href="#相关-8" class="headerlink" title="相关"></a>相关</h3><p><code>git diff app.rb</code>查看文件改动</p>
+<h2 id="level-30"><a href="#level-30" class="headerlink" title="level 30"></a>level 30</h2><h3 id="question-9"><a href="#question-9" class="headerlink" title="question"></a>question</h3><p>Name: blame<br>Level: 30<br>Difficulty: **</p>
+<p>Someone has put a password inside the file <code>config.rb</code> find out who it was.</p>
+<h3 id="answer-9"><a href="#answer-9" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git blame config.rb</div></pre></td></tr></table></figure>
+<p>答案：Spider Man</p>
+<h3 id="相关-9"><a href="#相关-9" class="headerlink" title="相关"></a>相关</h3><p><code>git blame</code>得到整个文件的每一行的详细修改信息:包括SHA串,日期和作者。</p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.open-open.com/lib/view/open1453249884901.html" target="_blank" rel="external">githug史上最全攻略</a><br><a href="http://fancyoung.com/blog/githug-cheat-sheet/" target="_blank" rel="external">Githug通关全攻略</a><br><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">Git远程操作详解</a></p>
+
+    </div>
+  </article>
+  
+
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2016 f的个人博客
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives">Writing</a></li>
+        <li><a href="http://github.com/probberechts">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
