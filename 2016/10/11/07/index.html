@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="level 41questionName: rebase_ontoLevel: 41Difficulty: **
+You have created your branch from wrong_branch and already made some commits, and you realise that you needed to create your branch from master">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【教程】<githug> --> git游戏 'githug'(level 41 - level 50) [六]">
+<meta property="og:url" content="fengdi.pro/2016/10/11/07/index.html">
+<meta property="og:site_name" content="f的个人博客">
+<meta property="og:description" content="level 41questionName: rebase_ontoLevel: 41Difficulty: **
+You have created your branch from wrong_branch and already made some commits, and you realise that you needed to create your branch from master">
+<meta property="og:image" content="fengdi.pro/images/07_1.PNG">
+<meta property="og:image" content="fengdi.pro/images/07_2.png">
+<meta property="og:updated_time" content="2016-12-30T03:53:26.920Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【教程】<githug> --> git游戏 'githug'(level 41 - level 50) [六]">
+<meta name="twitter:description" content="level 41questionName: rebase_ontoLevel: 41Difficulty: **
+You have created your branch from wrong_branch and already made some commits, and you realise that you needed to create your branch from master">
+<meta name="twitter:image" content="fengdi.pro/images/07_1.PNG">
+    
+    
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32" />
+    
+    <!-- title -->
+    <title>【教程】&lt;githug&gt; --&gt; git游戏 &#39;githug&#39;(level 41 - level 50) [六]</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content post width mx-auto px2 my4">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <span class="top-subtitle">
+          <a href="/archives">Writing</a>
+      </span>
+      
+    <h1 class="posttitle" itemprop="name headline">
+        【教程】&lt;githug&gt; --&gt; git游戏 &#39;githug&#39;(level 41 - level 50) [六]
+    </h1>
+
+
+
+      <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">f的个人博客</span>
+          </span>
+          
+    <div class="postdate">
+        <time datetime="2016-10-11T14:03:00.000Z" itemprop="datePublished">2016-10-11</time>
+    </div>
+
+
+          
+
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <h2 id="level-41"><a href="#level-41" class="headerlink" title="level 41"></a>level 41</h2><h3 id="question"><a href="#question" class="headerlink" title="question"></a>question</h3><p>Name: rebase_onto<br>Level: 41<br>Difficulty: **</p>
+<p>You have created your branch from <code>wrong_branch</code> and already made some commits, and you realise that you needed to create your branch from <code>master</code>. Rebase your commits onto <code>master</code> branch so that you don’t have <code>wrong_branch</code> commits.</p>
+<h3 id="answer"><a href="#answer" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rebase --onto master wrong_branch</div></pre></td></tr></table></figure>
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><p><code>git rebase --onto A B C</code> A 代表的是你实际想要将切片放到哪个分支，B代表切片开始分支（一定要注意的问题是 B 的开闭问题，这里 rebase –onto 的机制是左开右闭）。<br><code>git rebase --onto A B~1 temp</code> 如果想要保留A和C的历史，就需要先在切片的末尾建立一个分支temp。这就代表把B到c之间的历史移到了A上，并且当前temp分支的历史状态就是窝想要的。<br>参考：<a href="http://www.tuicool.com/articles/FB3Ine" target="_blank" rel="external">妙用git rebase –onto指令 - Ricky.K</a></p>
+<h2 id="level-42"><a href="#level-42" class="headerlink" title="level 42"></a>level 42</h2><h3 id="question-1"><a href="#question-1" class="headerlink" title="question"></a>question</h3><p>Name: repack<br>Level: 42<br>Difficulty: **</p>
+<p>Optimise how your repository is packaged ensuring that redundant packs are removed.</p>
+<h3 id="answer-1"><a href="#answer-1" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git repack <span class="_">-d</span></div></pre></td></tr></table></figure>
+<h3 id="相关-1"><a href="#相关-1" class="headerlink" title="相关"></a>相关</h3><p><code>git repack [-a] [-A] [-d] [-f] [-F] [-l] [-n] [-q] [-b] [--window=&lt;n&gt;] [--depth=&lt;n&gt;]</code><br><code>git repack -d</code> 包装后，如果新创建的包使一些现有的包冗余，删除多余的包。同时运行 git prune-packed 去除多余的松散对象文件。</p>
+<h2 id="level-43"><a href="#level-43" class="headerlink" title="level 43"></a>level 43</h2><h3 id="question-2"><a href="#question-2" class="headerlink" title="question"></a>question</h3><p>Name: cherry-pick<br>Level: 43<br>Difficulty: <em>*</em></p>
+<p>Your new feature isn’t worth the time and you’re going to delete it. But it has one commit that fills in <code>README</code> file, and you want this commit to be on the master as well.</p>
+<h3 id="answer-2"><a href="#answer-2" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">$ git <span class="built_in">log</span> new-feature</div><div class="line">$ git cherry-pick ca32a6da</div></pre></td></tr></table></figure>
+<p>先查看分支列表，得到分支名，查看分支提交记录，最后合并。</p>
+<h3 id="相关-2"><a href="#相关-2" class="headerlink" title="相关"></a>相关</h3><p><code>Git cherry-pick</code> 可以选择某一个分支中的一个或几个commit来进行操作</p>
+<h2 id="level-44"><a href="#level-44" class="headerlink" title="level 44"></a>level 44</h2><h3 id="question-3"><a href="#question-3" class="headerlink" title="question"></a>question</h3><p>Name: grep<br>Level: 44<br>Difficulty: **</p>
+<p>Your project’s deadline approaches, you should evaluate how many TODOs are left in your code</p>
+<h3 id="answer-3"><a href="#answer-3" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git grep TODO</div></pre></td></tr></table></figure>
+<p>可以看到有四条</p>
+<h3 id="相关-3"><a href="#相关-3" class="headerlink" title="相关"></a>相关</h3><p><code>git grep</code> 查找git库里面的某段文字</p>
+<ul>
+<li><code>git grep xmmap</code> 查看git里面这个仓库里每个使用 ‘xmmap’ 函数的地方。</li>
+<li><code>git grep -n xmmap</code> 显示行号。</li>
+<li><code>git grep --name-only xmmap</code> 只显示文件名。</li>
+<li><code>git grep -c xmmap</code> 查看每个文件里有多少行匹配内容（line matches）。</li>
+<li><code>git grep xmmap v1.5.0</code> 查找git仓库里某个特定版本里的内容，在命令行末尾加上表签名（tag reference）。</li>
+<li><code>git grep -e &#39;#define&#39; --and -e SORT_DIRENT</code> 组合搜索条件：查找在仓库的哪些地方定义了‘SORT_DIRENT’。</li>
+<li><code>git grep --all-match -e &#39;#define&#39; -e SORT_DIRENT</code> 进行或条件搜索。</li>
+</ul>
+<h2 id="level-45"><a href="#level-45" class="headerlink" title="level 45"></a>level 45</h2><h3 id="question-4"><a href="#question-4" class="headerlink" title="question"></a>question</h3><p>Name: rename_commit<br>Level: 45<br>Difficulty: <em>*</em></p>
+<p>Correct the typo in the message of your first (non-root) commit.</p>
+<h3 id="answer-4"><a href="#answer-4" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span> master</div><div class="line">$ git rebase -i HEAD~2</div></pre></td></tr></table></figure>
+<p>查看历史提交记录，看到需要修改的为倒数第二个，进入编辑页面，将需要改动的行的pick改为reword。保存退出后在弹出的第二个窗口里修改拼写错误 commmit 改为 commit</p>
+<h3 id="相关-4"><a href="#相关-4" class="headerlink" title="相关"></a>相关</h3><p>见上</p>
+<h2 id="level-46"><a href="#level-46" class="headerlink" title="level 46"></a>level 46</h2><h3 id="question-5"><a href="#question-5" class="headerlink" title="question"></a>question</h3><p>Name: squash<br>Level: 46<br>Difficulty: <em>**</em></p>
+<p>You have committed several times but would like all those changes to be one commit.</p>
+<h3 id="answer-5"><a href="#answer-5" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rebase -i HEAD~4</div></pre></td></tr></table></figure>
+<p>将后三个改为s</p>
+<h3 id="相关-5"><a href="#相关-5" class="headerlink" title="相关"></a>相关</h3><p>见上</p>
+<h2 id="level-47"><a href="#level-47" class="headerlink" title="level 47"></a>level 47</h2><h3 id="question-6"><a href="#question-6" class="headerlink" title="question"></a>question</h3><p>Name: merge_squash<br>Level: 47<br>Difficulty: <em>*</em></p>
+<p>Merge all commits from the long-feature-branch as a single commit.</p>
+<h3 id="answer-6"><a href="#answer-6" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git merge --squash long-feature-branch</div><div class="line">$ git commit -m <span class="string">'message'</span></div></pre></td></tr></table></figure>
+<h3 id="相关-6"><a href="#相关-6" class="headerlink" title="相关"></a>相关</h3><p><code>--squash</code> 选项的含义是：本地文件内容与不使用该选项的合并结果相同，但是不提交、不移动 HEAD ,因此需要一条额外的commit命令。其效果相当于将 another 分支上的多个 commit 合并成一个，放在当前分支上，原来的 commit 历史则没有拿过来。</p>
+<h2 id="level-48"><a href="#level-48" class="headerlink" title="level 48"></a>level 48</h2><h3 id="question-7"><a href="#question-7" class="headerlink" title="question"></a>question</h3><p>Name: reorder<br>Level: 48<br>Difficulty: <em>**</em></p>
+<p>You have committed several times but in the wrong order. Please reorder your commits.</p>
+<h3 id="answer-7"><a href="#answer-7" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span></div><div class="line">$ git rebase -i HEAD~2</div></pre></td></tr></table></figure>
+<p>查看历史记录发现提交顺序错误，将前两行顺序调换。</p>
+<h3 id="相关-7"><a href="#相关-7" class="headerlink" title="相关"></a>相关</h3><p>见上</p>
+<h2 id="level-49"><a href="#level-49" class="headerlink" title="level 49"></a>level 49</h2><h3 id="question-8"><a href="#question-8" class="headerlink" title="question"></a>question</h3><p>Name: bisect<br>Level: 49<br>Difficulty: <em>*</em></p>
+<p>A bug was introduced somewhere along the way.  You know that running <code>ruby prog.rb 5</code> should output 15.  You can also run <code>make test</code>.  What are the first 7 chars of the hash of the commit that introduced the bug.</p>
+<h3 id="answer-8"><a href="#answer-8" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span> --reverse -p prog.rb</div><div class="line">$ git bisect start master f6088248</div><div class="line">$ git bisect run make <span class="built_in">test</span></div></pre></td></tr></table></figure>
+<p>查看最初一次为正确提交，得到版本号。执行完毕后日志里找到 “is the first bad commit” ,得到 18ed2ac。<br>（标记）：出错了 得到的结果不为这个。。。<br><img src="/images/07_1.PNG" alt="07_1.PNG"></p>
+<h3 id="相关-8"><a href="#相关-8" class="headerlink" title="相关"></a>相关</h3><ul>
+<li><code>git bisect start</code></li>
+<li><code>git bisect good fb088248</code></li>
+<li><code>git bisect bad master</code></li>
+<li><code>git bisect run make test</code></li>
+<li><code>git bisect reset</code> 回到之前执行 git bisect start 的状态。</li>
+</ul>
+<h2 id="level-50"><a href="#level-50" class="headerlink" title="level 50"></a>level 50</h2><h3 id="question-9"><a href="#question-9" class="headerlink" title="question"></a>question</h3><p>Name: stage_lines<br>Level: 50<br>Difficulty: <em>**</em></p>
+<p>You’ve made changes within a single file that belong to two different features, but neither of the changes are yet staged. Stage only the changes belonging to the first feature.</p>
+<h3 id="answer-9"><a href="#answer-9" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add -p feature.rb</div></pre></td></tr></table></figure>
+<p>输入e编辑提交内容，删除第二个。</p>
+<h3 id="相关-9"><a href="#相关-9" class="headerlink" title="相关"></a>相关</h3><p>见上</p>
+<h2 id="level-51"><a href="#level-51" class="headerlink" title="level 51"></a>level 51</h2><h3 id="question-10"><a href="#question-10" class="headerlink" title="question"></a>question</h3><p>Name: find_old_branch<br>Level: 51<br>Difficulty: <em>**</em></p>
+<p>You have been working on a branch but got distracted by a major issue and forgot the name of it. Switch back to that branch.</p>
+<h3 id="answer-10"><a href="#answer-10" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div><div class="line">$ git checkout solve_world_hunger</div></pre></td></tr></table></figure>
+<p>查找到另一个分支，切换到另一个分支。</p>
+<h3 id="相关-10"><a href="#相关-10" class="headerlink" title="相关"></a>相关</h3><p>reflog 是 git 用来记录引用变化的一种机制。<br><code>git reflog</code> 命令可以对 git 误操作进行数据恢复。</p>
+<h2 id="level-52"><a href="#level-52" class="headerlink" title="level 52"></a>level 52</h2><h3 id="question-11"><a href="#question-11" class="headerlink" title="question"></a>question</h3><p>Name: revert<br>Level: 52<br>Difficulty: <em>**</em></p>
+<p>You have committed several times but want to undo the middle commit.<br>All commits have been pushed, so you can’t change existing history.</p>
+<h3 id="answer-11"><a href="#answer-11" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span></div><div class="line">$ git revert HEAD^1</div></pre></td></tr></table></figure>
+<h3 id="相关-11"><a href="#相关-11" class="headerlink" title="相关"></a>相关</h3><p>修复提交文件中的错误：</p>
+<ul>
+<li><code>git reset --hard HEAD</code> 把工作目录中所有未提交的内容清空。</li>
+<li><code>git checkout</code> 恢复一个文件</li>
+<li><code>git revert HEAD</code> 撤销一次提交</li>
+</ul>
+<h2 id="level-53"><a href="#level-53" class="headerlink" title="level 53"></a>level 53</h2><h3 id="question-12"><a href="#question-12" class="headerlink" title="question"></a>question</h3><p>Name: restore<br>Level: 53<br>Difficulty: <em>**</em></p>
+<p>You decided to delete your latest commit by running <code>git reset --hard HEAD^</code>.  (Not a smart thing to do.)  You then change your mind, and want that commit back.  Restore the deleted commit.</p>
+<h3 id="answer-12"><a href="#answer-12" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div><div class="line">$ git checkout bdbe33d</div></pre></td></tr></table></figure>
+<p>查看日志，回覆至对应的版本</p>
+<h3 id="相关-12"><a href="#相关-12" class="headerlink" title="相关"></a>相关</h3><p>恢复已修改的文件：</p>
+<h2 id="level-54"><a href="#level-54" class="headerlink" title="level 54"></a>level 54</h2><h3 id="question-13"><a href="#question-13" class="headerlink" title="question"></a>question</h3><p>Name: conflict<br>Level: 54<br>Difficulty: <em>**</em></p>
+<p>You need to merge mybranch into the current branch (master). But there may be some incorrect changes in mybranch which may cause conflicts. Solve any merge-conflicts you come across and finish the merge.</p>
+<h3 id="answer-13"><a href="#answer-13" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git merge mybranch</div><div class="line">$ vim poem.txt</div><div class="line">$ git add poem.txt</div><div class="line">$ git commit -m <span class="string">'message'</span></div></pre></td></tr></table></figure>
+<h3 id="相关-13"><a href="#相关-13" class="headerlink" title="相关"></a>相关</h3><p>处理冲突</p>
+<h2 id="level-55"><a href="#level-55" class="headerlink" title="level 55"></a>level 55</h2><h3 id="question-14"><a href="#question-14" class="headerlink" title="question"></a>question</h3><p>Name: submodule<br>Level: 55<br>Difficulty: **</p>
+<p>You want to include the files from the following repo: <code>https://github.com/jackmaney/githug-include-me</code> into a the folder <code>./githug-include-me</code>. Do this without manually cloning the repo or copying the files from the repo into this repo.</p>
+<h3 id="answer-14"><a href="#answer-14" class="headerlink" title="answer"></a>answer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git submodule add http://github.com/jackmaney/githug-include-me</div></pre></td></tr></table></figure>
+<h3 id="相关-14"><a href="#相关-14" class="headerlink" title="相关"></a>相关</h3><p><code>git submodule add 子模块仓库地址 路径</code><br><a href="http://www.tuicool.com/articles/jqiEJzU" target="_blank" rel="external">Git Submodule 使用简介</a></p>
+<h2 id="level-56"><a href="#level-56" class="headerlink" title="level 56"></a>level 56</h2><p><img src="/images/07_2.png" alt="07_2.png"></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.open-open.com/lib/view/open1453249884901.html" target="_blank" rel="external">githug史上最全攻略</a><br><a href="http://fancyoung.com/blog/githug-cheat-sheet/" target="_blank" rel="external">Githug通关全攻略</a><br><a href="http://www.jianshu.com/p/482b32716bbe" target="_blank" rel="external">「Githug」Git 游戏通关流程</a></p>
+
+    </div>
+  </article>
+  
+
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2016 f的个人博客
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives">Writing</a></li>
+        <li><a href="http://github.com/probberechts">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
