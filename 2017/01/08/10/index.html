@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="AJAXAJAX,即 Asynchronous(异步的) JavaScript and XML。AJAX不是一门新的语言，而是对现有技术的综合运用。其本质是在HTTP协议的基础上以异步的方式与服务器进行通信。AJAX是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量的数据交换，AJAX可以使网页实现异步更新。即在不重载整个网页面的情况下，对网页的某部分进行更新。
+异步指某段程序执行时不会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】<js> -->  AJAX">
+<meta property="og:url" content="fengdi.pro/2017/01/08/10/index.html">
+<meta property="og:site_name" content="2hua的个人博客">
+<meta property="og:description" content="AJAXAJAX,即 Asynchronous(异步的) JavaScript and XML。AJAX不是一门新的语言，而是对现有技术的综合运用。其本质是在HTTP协议的基础上以异步的方式与服务器进行通信。AJAX是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量的数据交换，AJAX可以使网页实现异步更新。即在不重载整个网页面的情况下，对网页的某部分进行更新。
+异步指某段程序执行时不会">
+<meta property="og:updated_time" content="2017-01-09T07:30:04.704Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【笔记】<js> -->  AJAX">
+<meta name="twitter:description" content="AJAXAJAX,即 Asynchronous(异步的) JavaScript and XML。AJAX不是一门新的语言，而是对现有技术的综合运用。其本质是在HTTP协议的基础上以异步的方式与服务器进行通信。AJAX是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量的数据交换，AJAX可以使网页实现异步更新。即在不重载整个网页面的情况下，对网页的某部分进行更新。
+异步指某段程序执行时不会">
+    
+    
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32" />
+    
+    <!-- title -->
+    <title>【笔记】&lt;js&gt; --&gt;  AJAX</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content post width mx-auto px2 my4">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <span class="top-subtitle">
+          <a href="/archives">Writing</a>
+      </span>
+      
+    <h1 class="posttitle" itemprop="name headline">
+        【笔记】&lt;js&gt; --&gt;  AJAX
+    </h1>
+
+
+
+      <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">2hua的个人博客</span>
+          </span>
+          
+    <div class="postdate">
+        <time datetime="2017-01-08T11:05:00.000Z" itemprop="datePublished">2017-01-08</time>
+    </div>
+
+
+          
+
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>AJAX,即 Asynchronous(异步的) JavaScript and XML。<br>AJAX不是一门新的语言，而是对现有技术的综合运用。<br>其本质是在HTTP协议的基础上以异步的方式与服务器进行通信。<br>AJAX是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量的数据交换，AJAX可以使网页实现异步更新。即在不重载整个网页面的情况下，对网页的某部分进行更新。</p>
+<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序，不依赖程序本身的书写顺序，相反则为同步。其优势在于不阻塞程序的执行，从而提升整体的执行效率。<br>实现异步加载的方式</p>
+<ol>
+<li><p>defer 只支持ie</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">defer</span>=<span class="string">"defer"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>async html5的属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">async</span>=<span class="string">"async"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>动态创建script</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url, callback</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>)</div><div class="line">  script.type = <span class="string">"text/javascript"</span>;</div><div class="line">  <span class="keyword">if</span> (script.readyState)&#123; <span class="comment">//IE</span></div><div class="line">    script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span> (script.readyState == <span class="string">"loaded"</span> ||script.readyState == <span class="string">"complete"</span>)&#123;</div><div class="line">        script.onreadystatechange = <span class="literal">null</span>;</div><div class="line">        callback();</div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">  &#125; <span class="keyword">else</span> &#123; <span class="comment">//Others: Firefox, Safari, Chrome, and Opera</span></div><div class="line">    script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      callback();</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">  script.src = url;</div><div class="line">  <span class="built_in">document</span>.body.appendChild(script);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>由于javascript的动态性，还有很多异步加载的方法：XHR Injection、XHR Eval、Script In Iframe、Script defer属性等等。</p>
+<ul>
+<li>XHR Injection（XHR 注入）：通过XMLHttpRequest来获取javascript，然后创建一个script元素插入到DOM结构中。ajax请求成功后设置script.text为请求成功后返回的responseText。 </li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>另外：实现异步编程有哪些方式。（摘自<a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html" target="_blank" rel="external">Javascript异步编程的4种方法</a>）</p>
+<ol>
+<li>回调函数 callback<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//f1的任务代码</span></div><div class="line">    callback();</div><div class="line">  &#125;,<span class="number">1000</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>回调函数的优点是简单，易理解和部署，缺点是不利于代码阅读和维护，各部分之间高度耦合，流程会很混乱，而且每个任务只能指定一个回调函数。</p>
+<ol>
+<li>事件监听<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">f1.on(<span class="string">'done'</span>, f2);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//f1的任务代码</span></div><div class="line">    f1.trigger(<span class="string">'done'</span>);</div><div class="line">  &#125;, <span class="number">1000</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这种方法的优点是比较容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，而且可以“去耦合”，有利于实现模块化。缺点是整个程序都要变成事件驱动型，运行流程会变得很不清晰。</p>
+<ol>
+<li>发布/订阅<br>采用的是Ben Alman 的 Tiny Pub/Sub<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">jQuery.subscribe(<span class="string">"done"</span>, f2);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//f1的任务代码</span></div><div class="line">    jQuery.publish(<span class="string">"done"</span>)</div><div class="line">  &#125;, <span class="number">1000</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>发布/订阅模式（public-subscribe pattern），又称观察者模式（observer pattern）。<br>f1执行完成后向信号中心发布done信号，从而引发f2的执行。<br>f2执,行完成后可以取消订阅。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery.unsubscribe(<span class="string">"done"</span>, f2);</div></pre></td></tr></table></figure></p>
+<p>这种方法的性质和“事件监听”类似，但是明显优于后者。因为我们可以通过查看“消息中心”。了解存在多少信号、每个信号有多少订阅者，从而监控程序的运行。</p>
+<ol>
+<li>Promise对象<br>ES6是由社区最早提出和实现，ES6将其写进了语言标准，统一了用法，原生提供了Promise对象。<br>从语法上说，Promise是一个对象，可以获取异步操作的结果，它有三种状态。<ul>
+<li>Pending（进行中）</li>
+<li>Resolved（已完成，又称Fulfilled）</li>
+<li>Rejected（已失败）<br>只有异步操作的结果，可以决定当前是哪一种状态。<br>一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：</li>
+<li>从 Pending 变为 Resolved。</li>
+<li>从 Pending 变为 Rejected。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="comment">/* 异步操作成功 */</span>)&#123;</div><div class="line">    resolve(value);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    reject(error);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="comment">// success</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">  <span class="comment">// failure</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>扯远了…</p>
+<hr>
+<h2 id="XMLhttpRequest"><a href="#XMLhttpRequest" class="headerlink" title="XMLhttpRequest"></a>XMLhttpRequest</h2><p>XMLhttpRequest可以以异步方式的处理程序。<br>浏览器内建对象，用于在后台与服务器通信（交换数据），由此我们便可实现对网页的部分更新，而不是刷新整个页面。<br>一个基本的例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//实例化</span></div><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line"><span class="comment">//发起一个http请求</span></div><div class="line">xhr.open(<span class="string">'get'</span>, <span class="string">'index.php'</span>);</div><div class="line">xhr.send(<span class="literal">null</span>);</div><div class="line"><span class="comment">//接收服务器响应</span></div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="built_in">document</span>.querySelector(<span class="string">'.result'</span>);</div><div class="line">    result.innerHTML = xhr.responseText</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><p>XMLHttpRequest 本质基于 HTTP 协议实现通信。HTTP 请求 3 个组成部分与 XMLHttpRequest 方法的对应关系：</p>
+<ol>
+<li><p>请求行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">'get'</span>, <span class="string">'index.php'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>请求头(get 请求可以不设置)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html'</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>请求主体</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h3><p>HTTP响应 3 个组成部分与 XMLHttpRequest 方法或属性的对应关系。<br>由于服务器做出响应需要时间（比如网速慢等原因），所以我们需要监听服务器响应的状态，然后才能进行处理。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="built_in">document</span>.querySelector(<span class="string">'.result'</span>);</div><div class="line">    result.innerHTML = xhr.responseText;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>onreadystatechange 是 Javascript 的事件的一种，其意义在于监听 XMLHttpRequest 的状态。</p>
+<ol>
+<li><p>获取状态行（包括状态码和状态信息）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xhr.status</div><div class="line">xhr.statusText</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取响应头</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取指定头信息</span></div><div class="line">xhr.getResponseHeader(<span class="string">'Content-Type'</span>);</div><div class="line"><span class="comment">//获取所有响应头信息</span></div><div class="line">hr.getAllResponseHeaders();</div></pre></td></tr></table></figure>
+</li>
+<li><p>响应主体</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xhr.responseText；</div><div class="line">xhr.responseXML;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我们需要检测并判断响应头的 MIME 类型后确定使用 request.responseText 或者 request.responseXML.</p>
+<h3 id="get-和-post-请求方式的差异"><a href="#get-和-post-请求方式的差异" class="headerlink" title="get 和 post 请求方式的差异"></a>get 和 post 请求方式的差异</h3><ul>
+<li>get 请求没有请求主体，使用 xhr.send(null)。</li>
+<li>get 可以通过在请求 URL 上添加请求参数。</li>
+<li>post 可以通过 xhr.send(‘name=i&amp;age=10’)。</li>
+<li>post 需要设置请求头 xhr.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’);</li>
+<li>get 效率更好（应用比较多）。</li>
+<li>get 大小限制约 4K，post则没有限制。</li>
+</ul>
+<h2 id="jquery-中的-ajax"><a href="#jquery-中的-ajax" class="headerlink" title="jquery 中的 ajax"></a>jquery 中的 ajax</h2><ul>
+<li>$.ajax({}) 可配置方式发起 Ajax 请求。</li>
+<li>$.get() 以 get 方式发起 Ajax 请求。</li>
+<li>$.post() 以 post 方式发起ajax请求。</li>
+<li>$(‘form’).serialize() 序列化表单（即格式化 key=val&amp;key=val)</li>
+<li>url 接口地址</li>
+<li>type 请求方式</li>
+<li>timeout 请求超时</li>
+<li>dataType 服务器返回格式</li>
+<li>data 发送请求数据</li>
+<li>beforeSend:function(){} 请求发起前调用</li>
+<li>success 成功响应后调用</li>
+<li>error 错误响应时调用</li>
+<li>complete 响应完成时调用（包括成功和失败）</li>
+</ul>
+<p><a href="http://www.w3school.com.cn/jquery/jquery_ref_ajax.asp" target="_blank" rel="external">jQuery 参考手册 - Ajax</a></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>忽然发现已经忘了 ajax 的一些理论方面的知识了…  面试忽然问起，恩，懵住了… 所以学习嘛，还是要时常复习。</p>
+
+    </div>
+  </article>
+  
+
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 2hua的个人博客
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives">Writing</a></li>
+        <li><a href="https://github.com/fengdihuahua">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
