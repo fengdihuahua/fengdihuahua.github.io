@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="事件(event)
+事件就是 web 浏览器通知应用程序发生了什么事情。事件是可以被 javascript 侦测到的行为。
+事件类型(event type)是一个用来说明发生什么类型事件的字符串。由于事件类型只是一个字符串，因此实际上有时会称之为事件名字(event name)。
+事件目标(event target)是发生的事件或与之相关的对象。
+事件处理程序(event handler)或事件监">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】<js>-->关于事件(event)要了解的问题总结笔记">
+<meta property="og:url" content="fengdi.pro/2017/01/29/12/index.html">
+<meta property="og:site_name" content="2hua的个人博客">
+<meta property="og:description" content="事件(event)
+事件就是 web 浏览器通知应用程序发生了什么事情。事件是可以被 javascript 侦测到的行为。
+事件类型(event type)是一个用来说明发生什么类型事件的字符串。由于事件类型只是一个字符串，因此实际上有时会称之为事件名字(event name)。
+事件目标(event target)是发生的事件或与之相关的对象。
+事件处理程序(event handler)或事件监">
+<meta property="og:image" content="fengdi.pro/images/html5事件_1.png">
+<meta property="og:image" content="fengdi.pro/images/html5事件_2.png">
+<meta property="og:image" content="fengdi.pro/images/事件传播三个阶段.png">
+<meta property="og:image" content="fengdi.pro/images/事件冒泡.png">
+<meta property="og:image" content="fengdi.pro/images/事件捕获.png">
+<meta property="og:updated_time" content="2017-01-29T11:47:04.277Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【笔记】<js>-->关于事件(event)要了解的问题总结笔记">
+<meta name="twitter:description" content="事件(event)
+事件就是 web 浏览器通知应用程序发生了什么事情。事件是可以被 javascript 侦测到的行为。
+事件类型(event type)是一个用来说明发生什么类型事件的字符串。由于事件类型只是一个字符串，因此实际上有时会称之为事件名字(event name)。
+事件目标(event target)是发生的事件或与之相关的对象。
+事件处理程序(event handler)或事件监">
+<meta name="twitter:image" content="fengdi.pro/images/html5事件_1.png">
+    
+    
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32" />
+    
+    <!-- title -->
+    <title>【笔记】&lt;js&gt;--&gt;关于事件(event)要了解的问题总结笔记</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content post width mx-auto px2 my4">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <span class="top-subtitle">
+          <a href="/archives">Writing</a>
+      </span>
+      
+    <h1 class="posttitle" itemprop="name headline">
+        【笔记】&lt;js&gt;--&gt;关于事件(event)要了解的问题总结笔记
+    </h1>
+
+
+
+      <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">2hua的个人博客</span>
+          </span>
+          
+    <div class="postdate">
+        <time datetime="2017-01-29T04:13:00.000Z" itemprop="datePublished">2017-01-29</time>
+    </div>
+
+
+          
+
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <h2 id="事件-event"><a href="#事件-event" class="headerlink" title="事件(event)"></a>事件(event)</h2><ul>
+<li>事件就是 web 浏览器通知应用程序发生了什么事情。事件是可以被 javascript 侦测到的行为。</li>
+<li>事件类型(event type)是一个用来说明发生什么类型事件的字符串。由于事件类型只是一个字符串，因此实际上有时会称之为事件名字(event name)。</li>
+<li>事件目标(event target)是发生的事件或与之相关的对象。</li>
+<li>事件处理程序(event handler)或事件监听程序(event listener)是处理或响应事件的函数。应用程序通过指明事件类型和事件目标，在 web 浏览器中注册它们的事件处理程序函数。</li>
+<li>事件对象(event object)是与特定事件相关且包含有关该事件详细信息的对象。</li>
+<li>事件传播(event propagation)是浏览器决定哪个对象触发其事件处理函数的过程。</li>
+</ul>
+<h2 id="事件类型-event-type"><a href="#事件类型-event-type" class="headerlink" title="事件类型(event type)"></a>事件类型(event type)</h2><ol>
+<li>传统事件类型<ol>
+<li>表单事件<ul>
+<li>submit 事件：提交按钮(<code>&lt;input type=&quot;submit&quot;/&gt;</code>)被点击。</li>
+<li>reset 事件：重置按钮(<code>&lt;input type=&quot;reset&quot;&gt;</code>)被点击。 </li>
+<li>focus 事件：元素获得焦点。</li>
+<li>blur 事件：元素失去焦点。</li>
+<li>change 事件：改变域的内容。</li>
+</ul>
+</li>
+<li>window 事件<ul>
+<li>load 事件：某个页面或图像被完成加载。</li>
+<li>unload 事件：用户退出页面。</li>
+<li>beforeunload：在即将离开当前页面（刷新或者关闭）是执行。</li>
+<li>error 事件：当加载文档或图像时发生某个错误。</li>
+<li>resize 事件：窗口或框架被调整尺寸。</li>
+<li>scroll 事件：元素滚动条滚动。</li>
+</ul>
+</li>
+<li>鼠标事件<ul>
+<li>mousemove 事件：鼠标被移动或拖动鼠标。</li>
+<li>mouseout 事件：鼠标不再悬停到某个元素上。</li>
+<li>mousedown 事件：鼠标按下。</li>
+<li>mouseup 事件：鼠标释放。</li>
+<li>click 事件：单击鼠标按键。</li>
+<li>dblclick 事件：短时间连续两次单击（双击）鼠标按键。</li>
+</ul>
+</li>
+<li>键盘事件<ul>
+<li>keydown 事件：某个键被按下。</li>
+<li>keyup 事件：某个键被松开。</li>
+<li>keypress 事件：某个键被按下或按住。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>DOM 事件</li>
+<li><p>HTML5 事件<br>HTML5及相关标准定义了大量的新的 web 应用 api。<br>广泛推广的HTML5特性之一是加入用于播放音频和视频的 <code>&lt;audio&gt;</code> 和 <code>&lt;video&gt;</code> 元素。这些元素有着长长的事件列表，他们触发各种关于网络事件、数据缓冲状况和播放状态的通知。</p>
+<p><img src="/images/html5事件_1.png" alt="HTML5事件_1"><br>拖放事件：<br><img src="/images/html5事件_2.png" alt="HTML5事件_2"></p>
+</li>
+<li>触摸屏和移动设备事件<ol>
+<li>手势事件 gesture<ul>
+<li>gesturestart 事件：手势生成。</li>
+<li>gesturechange 事件：手势过程。</li>
+<li>gestureend 事件：手势结束。</li>
+</ul>
+</li>
+<li>触摸事件 touch<ul>
+<li>touchstart 事件：手指触摸屏幕。</li>
+<li>touchmove 事件：手指移动。</li>
+<li>touchend 事件：手指离开。</li>
+</ul>
+</li>
+<li>横竖屏切换 orientation<ul>
+<li>orientationchange 事件：竖屏旋转到横屏模式。<br>window 对象的 orientation 属性能给出当前方位，其值是 0，90，180，-90。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="注册事件处理程序"><a href="#注册事件处理程序" class="headerlink" title="注册事件处理程序"></a>注册事件处理程序</h2><ol>
+<li><p>设置 javascript 对象属性为事件处理程序<br>事件处理程序属性的名字由 “on” 后面跟着事件名组成：onclick、 onchange、 onload、 onmouseover 等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = funciton () &#123;</div><div class="line">  <span class="keyword">var</span> elt = <span class="built_in">document</span>.getElementById(<span class="string">"shipping_address"</span>);</div><div class="line">  elt.onsubmit = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> validate(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置 HTML 标签属性为事件处理程序<br>设置的文档元素事件处理程序属性（property）也能换成对应 HTML 标签的属性（attribute）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"alert('Thank you')"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>addEventListener()<br>除 IE8 及之前版本外的所有浏览器都支持。<br>addEventListener() 接收三个参数。第一个是要注册处理程序的事件类型（不包括 on ）；第二个参数是当指定类型的事件发生时应该调用的函数。最后一个参数是布尔值。通常情况下，会给这个参数传递 false。如果相反传递了 true，那么函数将注册为捕获事件处理程序，并在事件不同的调度阶段调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> b = <span class="built_in">document</span>.getElementById(<span class="string">"mybutton"</span>);</div><div class="line">b.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(<span class="string">"thanks!"</span>)&#125;, <span class="literal">false</span>);</div><div class="line"><span class="built_in">document</span>.removeEventListener(<span class="string">"mousemove"</span>, handleMouseMove, <span class="literal">true</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>attachEvent<br>IE9 之前的 IE 不支持 addEventListener() 和 removeEventListener()。<br>IE5 及以后版本定义了类似的方法 attachEvent() 和 detachEvent()。</p>
+</li>
+</ol>
+<ul>
+<li>addEventListener()、 removeEventListener() 和 attachEvent()、 detachEvent() 区别<ul>
+<li>因为 IE 事件模型不支持事件捕获，所以 attachEvent() 和 detachEvent() 要求只有两个参数：事件类型和处理程序函数。</li>
+<li>IE 方法的第一个参数使用了带 “on” 前缀的事件处理程序属性名。而非没有前缀的事件类型。</li>
+<li>attachEvent() 允许相同的事件处理函数注册多次。当特定的事件类型发生时，注册函数的调用次数和注册次数一样。</li>
+<li>this的区别<br>addEventLisener：事件处理程序会在当前对象的作用域运行，因此，事件处理程序的 this 就是当前对象。<br>attachEvent：事件处理程序是在全局作用域下运行因此 this 就是 window 。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> b = <span class="built_in">document</span>.getElementById(<span class="string">"mybutton"</span>);</div><div class="line"><span class="keyword">var</span> handler = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  alert(<span class="string">"thanks"</span>);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">if</span> (b.addEventListener) &#123;</div><div class="line">  b.addEventListener(<span class="string">"click"</span>, handler, <span class="literal">false</span>);</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (b.attachEvent) &#123;</div><div class="line">  b.attachEvent(<span class="string">"onclick"</span>, handler);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>移除事件的兼容写法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventTools=&#123;</div><div class="line">  <span class="attr">removeEventListener</span>:<span class="function"><span class="keyword">function</span> (<span class="params">element,eventName,listener</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(element.removeEventListener)&#123;</div><div class="line">      element.removeEventListener(eventName,listener,<span class="literal">false</span>);</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.detachEvent)&#123;</div><div class="line">      element.detachEvent(<span class="string">"on"</span>+eventName,listener);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      element[<span class="string">"on"</span>+eventName]=<span class="literal">null</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h2><h3 id="事件传播的三个阶段"><a href="#事件传播的三个阶段" class="headerlink" title="事件传播的三个阶段"></a>事件传播的三个阶段</h3><ol>
+<li>捕获</li>
+<li>目标：正在执行当前对象的事件处理程序。</li>
+<li>冒泡<br><img src="/images/事件传播三个阶段.png" alt="事件传播三个阶段"></li>
+</ol>
+<p>###事件捕获和事件冒泡</p>
+<ol>
+<li>事件冒泡<br><img src="/images/事件冒泡.png" alt="事件冒泡"><br>如果元素 A 嵌套在元素 B 中，那么 A 被点击不仅 A 的 onclick 事件会被触发，B 的 onclick 也会被触发。触发的顺序是“由内而外” 。</li>
+</ol>
+<ul>
+<li><p>取消事件冒泡：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.event.cancelBubble = <span class="literal">true</span>;<span class="comment">//IE</span></div><div class="line">e.stopPropagation();</div></pre></td></tr></table></figure>
+</li>
+<li><p>如何阻止事件冒泡和默认事件？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//阻止浏览器的默认行为</span></div><div class="line"><span class="built_in">window</span>.event?<span class="built_in">window</span>.event.returnValue = <span class="literal">false</span> : e.preventDefault();</div><div class="line"><span class="comment">//停止事件冒泡</span></div><div class="line"><span class="built_in">window</span>.event?<span class="built_in">window</span>.event.cancelBubble = <span class="literal">true</span> : e.stopPropagation();</div></pre></td></tr></table></figure>
+<p>原生 JavaScript 中，<code>return false;</code> 只阻止默认行为，不阻止冒泡，jQuery 中的 <code>return false;</code> 既阻止默认行为，又阻止冒泡。</p>
+</li>
+</ul>
+<ol>
+<li>事件捕获<br><img src="/images/事件捕获.png" alt="事件捕获"><br>和事件冒泡正好相反，逐级向下传播，触发的顺序是“由外而内”</li>
+</ol>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="事件代理-委托的原理以及优缺点"><a href="#事件代理-委托的原理以及优缺点" class="headerlink" title="事件代理/委托的原理以及优缺点"></a>事件代理/委托的原理以及优缺点</h3><ol>
+<li>原理：靠事件的冒泡机制来实现。让自己所触发的事件由他的父元素代替执行。</li>
+<li>优点：可以大量节省内存占用，减少事件注册。可以实现当新增子对象时无需再次对其绑定事件，对于动态内容部分尤为合适。</li>
+<li>缺点：事件代理的应用常用应该仅限上述需求下，如果把所有的事件都代理就可能出现事件误判，即本不应用触发事件的被绑上了事件（有人把页面里所有的时间都绑定到 document 用委托的，只是及其不智的做法）</li>
+</ol>
+<h3 id="实现事件代理，要求兼容浏览"><a href="#实现事件代理，要求兼容浏览" class="headerlink" title="实现事件代理，要求兼容浏览"></a>实现事件代理，要求兼容浏览</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// ============ 简单的事件委托</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">delegateEvent</span>(<span class="params">interfaceEle, selector, type, fn</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(interfaceEle.addEventListener)&#123;</div><div class="line">    interfaceEle.addEventListener(type, eventfn);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">    interfaceEle.attachEvent(<span class="string">"on"</span>+type, eventfn);</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">eventfn</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> e = e || <span class="built_in">window</span>.event;    </div><div class="line">    <span class="keyword">var</span> target = e.target || e.srcElement;</div><div class="line">    <span class="comment">//如果目标元素与选择器匹配则执行函数</span></div><div class="line">    <span class="keyword">if</span> (matchSelector(target, selector)) &#123;</div><div class="line">            <span class="keyword">if</span>(fn) &#123;</div><div class="line">                <span class="comment">//将fn内部的this指向target（在此之前this都是指向的绑定事件的元素即interfaceEle）</span></div><div class="line">                fn.call(target, e); </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * only support #id, tagName, .className</div><div class="line"> * and it's simple single, no combination</div><div class="line"> */</div><div class="line"><span class="comment">//比较函数：判断事件的作用目标是否与选择器匹配；匹配则返回true</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">matchSelector</span>(<span class="params">ele, selector</span>) </span>&#123;</div><div class="line">    <span class="comment">// 如果选择器为ID</span></div><div class="line">    <span class="keyword">if</span> (selector.charAt(<span class="number">0</span>) === <span class="string">"#"</span>) &#123;            </div><div class="line">        <span class="keyword">return</span> ele.id === selector.slice(<span class="number">1</span>);   </div><div class="line">    &#125;</div><div class="line">    <span class="comment">//charAt(0),返回索引为0的字符</span></div><div class="line">    <span class="comment">//slice(a，b),从已有的数组或字符串返回从索引从a处开始，截取到索引b之前的子数组或子字符串；</span></div><div class="line">    <span class="comment">//如果选择器为Class</span></div><div class="line">    <span class="keyword">if</span> (selector.charAt(<span class="number">0</span>) === <span class="string">"."</span>) &#123;</div><div class="line">        <span class="keyword">return</span> (<span class="string">" "</span> + ele.className + <span class="string">" "</span>).indexOf(<span class="string">" "</span> + selector.slice(<span class="number">1</span>) + <span class="string">" "</span>) != <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 如果选择器为tagName</span></div><div class="line">    <span class="keyword">return</span> ele.tagName.toLowerCase() === selector.toLowerCase();</div><div class="line">&#125;</div><div class="line"><span class="comment">//toLowerCase()将字符串转换成小写</span></div><div class="line"><span class="comment">//调用</span></div><div class="line"><span class="keyword">var</span> odiv = <span class="built_in">document</span>.getElementById(<span class="string">"oDiv"</span>);</div><div class="line">delegateEvent(odiv,<span class="string">"a"</span>,<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"1"</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="参考自："><a href="#参考自：" class="headerlink" title="参考自："></a>参考自：</h2><p><a href="http://pan.baidu.com/s/1dE2Rued" target="_blank" rel="external">javascript权威指南</a><br><a href="http://blog.csdn.net/qi1271199790/article/details/53458043" target="_blank" rel="external">1.事件委托的原理以及优缺点 2. 手写原生js实现事件代理，并要求兼容浏览器</a></p>
+
+    </div>
+  </article>
+  
+
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 2hua的个人博客
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives">Writing</a></li>
+        <li><a href="https://github.com/fengdihuahua">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
