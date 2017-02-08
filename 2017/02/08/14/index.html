@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="前记啊，快乐的时光总是很短暂。2017年的第一场面试，比想的要更早些 :-D好呢！总有辣么几个问题，面试总要问！嘛！想起几个总结几个，答案肯定不标准，随时改，基本就是这样。
+谈一谈对性能优化的认识？前端优化的途径有很多,大致可以分为两类，第一类是页面级别的优化，例如 HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等 ;第二类则是代码级别的优化，例如 Javascript中的DOM 操作优化、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】<面试题>--> 辣些经典的面试题">
+<meta property="og:url" content="fengdi.pro/2017/02/08/14/index.html">
+<meta property="og:site_name" content="2hua的个人博客">
+<meta property="og:description" content="前记啊，快乐的时光总是很短暂。2017年的第一场面试，比想的要更早些 :-D好呢！总有辣么几个问题，面试总要问！嘛！想起几个总结几个，答案肯定不标准，随时改，基本就是这样。
+谈一谈对性能优化的认识？前端优化的途径有很多,大致可以分为两类，第一类是页面级别的优化，例如 HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等 ;第二类则是代码级别的优化，例如 Javascript中的DOM 操作优化、">
+<meta property="og:updated_time" content="2017-02-08T13:28:26.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【笔记】<面试题>--> 辣些经典的面试题">
+<meta name="twitter:description" content="前记啊，快乐的时光总是很短暂。2017年的第一场面试，比想的要更早些 :-D好呢！总有辣么几个问题，面试总要问！嘛！想起几个总结几个，答案肯定不标准，随时改，基本就是这样。
+谈一谈对性能优化的认识？前端优化的途径有很多,大致可以分为两类，第一类是页面级别的优化，例如 HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等 ;第二类则是代码级别的优化，例如 Javascript中的DOM 操作优化、">
+    
+    
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32" />
+    
+    <!-- title -->
+    <title>【笔记】&lt;面试题&gt;--&gt; 辣些经典的面试题</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content post width mx-auto px2 my4">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <span class="top-subtitle">
+          <a href="/archives">Writing</a>
+      </span>
+      
+    <h1 class="posttitle" itemprop="name headline">
+        【笔记】&lt;面试题&gt;--&gt; 辣些经典的面试题
+    </h1>
+
+
+
+      <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">2hua的个人博客</span>
+          </span>
+          
+    <div class="postdate">
+        <time datetime="2017-02-08T04:13:00.000Z" itemprop="datePublished">2017-02-08</time>
+    </div>
+
+
+          
+
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p>啊，快乐的时光总是很短暂。<br>2017年的第一场面试，比想的要更早些 :-D<br>好呢！总有辣么几个问题，面试总要问！<br>嘛！想起几个总结几个，答案肯定不标准，随时改，基本就是这样。</p>
+<h2 id="谈一谈对性能优化的认识？"><a href="#谈一谈对性能优化的认识？" class="headerlink" title="谈一谈对性能优化的认识？"></a>谈一谈对性能优化的认识？</h2><p>前端优化的途径有很多,大致可以分为两类，第一类是页面级别的优化，例如 HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等 ;第二类则是代码级别的优化，例如 Javascript中的DOM 操作优化、CSS选择符优化、图片优化以及 HTML结构优化等等。</p>
+<ul>
+<li>页面级优化<ol>
+<li>减少http请求次数。<br>大部分响应时间花在下载网页内容（images，stylesheets，javascript，script，flash等）。减少次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容比较多的时候可以采用以下技巧：<ol>
+<li>从设计实现层面简化页面<br>保持页面简洁、减少资源的使用是最直接的。</li>
+<li>合理设置 HTTP 缓存<br>原则很简单，能缓存越多越好，能缓存越久越好。<br><a href="http://www.tuicool.com/articles/YJbiAri" target="_blank" rel="external">HTTP 缓存的四种风味与缓存策略</a></li>
+<li>资源合并与压缩<br>如果可以的话，尽可能的将外部的脚本、样式进行合并，多个合为一个。另外， CSS、 Javascript、Image 都可以用相应的工具进行压缩，压缩后往往能省下不少空间。</li>
+<li>css sprites<br>合并 CSS图片，减少请求数的又一个好办法。</li>
+<li>inline images（不是很了解这个）</li>
+<li>Lazy Load Images</li>
+</ol>
+</li>
+<li>将外部脚本置底</li>
+<li>异步执行 inline 脚本</li>
+<li>Lazy Load Javascript</li>
+<li>将 css 放在 head 中</li>
+<li>异步请求 callback</li>
+<li>减少不必要的 HTTP 跳转</li>
+<li>避免重复的资源请求</li>
+</ol>
+</li>
+<li>代码级优化<ol>
+<li>Javascript<br>　　1. DOM<br>　　DOM操作应该是脚本中最耗性能的一类操作，例如增加、修改、删除 DOM元素或者对 DOM集合进行操作。如果脚本中包含了大量的 DOM 操作则需要注意以下几点：<br>　　  1. HTML Collection（HTML收集器，返回的是一个数组内容信息）<br>　　  在脚本中 document.images、document.forms 、getElementsByTagName()返回的都是 HTMLCollection类型的集合，在平时使用的时候大多将它作为数组来使用，因为它有 length属性，也可以使用索引访问每一个元素。不过在访问性能上则比数组要差很多，原因是这个集合并不是一个静态的结果，它表示的仅仅是一个特定的查询，每次访问该集合时都会重新执行这个查询从而更新查询结果。所谓的 “访问集合” 包括读取集合的 length属性、访问集合中的元素。<br>　　  因此，当你需要遍历 HTML Collection的时候，尽量将它转为数组后再访问，以提高性能。即使不转换为数组，也请尽可能少的访问它，例如在遍历的时候可以将 length属性、成员保存到局部变量后再使用局部变量。<br>　　  2. Reflow &amp; Repaint（不是很了解）<br>　　  除了上面一点之外， DOM操作还需要考虑浏览器的 Reflow 和 Repaint ，因为这些都是需要消耗资源的。<br>　　2. 慎用 with（不了解）<br> with(obj){ p = 1};<br> 代码块的行为实际上是修改了代码块中的执行环境 ，将obj放在了其作用域链的最前端，在 with 代码块中访问非局部变量是都是先从 obj 上开始查找，如果没有再依次按作用域链向上查找，因此使用 with 相当于增加了作用域链长度。而每次查找作用域链都是要消耗时间的，过长的作用域链会导致查找性能下降。<br>　　  因此，除非你能肯定在 with 代码中只访问 obj 中的属性，否则慎用 with，替代的可以使用局部变量缓存需要访问的属性。<br>　　3. 避免使用 eval 和 Function<br>　　每次 eval 或 Function 构造函数作用于字符串表示的源代码时，脚本引擎都需要将源代码转换成可执行代码。这是很消耗资源的操作 —— 通常比简单的函数调用慢 100倍以上。<br>　　eval 函数效率特别低，由于事先无法知晓传给 eval 的字符串中的内容，eval 在其上下文中解释要处理的代码，也就是说编译器无法优化上下文，因此只能有浏览器在运行时解释代码。这对性能影响很大。<br>　　Function 构造函数比 eval 略好，因为使用此代码不会影响周围代码;但其速度仍很慢。<br>　　此外，使用 eval和 Function也不利于Javascript 压缩工具执行压缩。<br>　　4. 减少作用域链查找<br>　　这一点在循环中是尤其需要注意的问题。如果在循环中需要访问非本作用域下的变量时请在遍历之前用局部变量缓存该变量，并在遍历结束后再重写那个变量，这一点对全局变量尤其重要，因为全局变量处于作用域链的最顶端，访问时的查找次数是最多的。<br>　　此外，要减少作用域链查找还应该减少闭包的使用。<br>　　5. 数据访问<br>　　Javascript中的数据访问包括直接量 (字符串、正则表达式 )、变量、对象属性以及数组，其中对直接量和局部变量的访问是最快的，对对象属性以及数组的访问需要更大的开销。当出现以下情况时，建议将数据放入局部变量：<br>　　  1. 对任何对象属性的访问超过 1次<br>　　  2. 对任何数组成员的访问次数超过 1次<br>　　另外，还应当尽可能的减少对对象以及数组深度查找。<br>　　6. 字符串拼接<br>　　在 Javascript中使用”+” 号来拼接字符串效率是比较低的，因为每次运行都会开辟新的内存并生成新的字符串变量，然后将拼接结果赋值给新变量。与之相比更为高效的做法是使用数组的 join方法，即将需要拼接的字符串放在数组中最后调用其 join 方法得到结果。不过由于使用数组也有一定的开销，因此当需要拼接的字符串较多的时候可以考虑用此方法。<br>　2. CSS选择符<br>　3. HTML<br>　4. Image压缩</li>
+</ol>
+</li>
+</ul>
+<p>摘自：<a href="https://www.zhihu.com/question/21658448" target="_blank" rel="external">Web前端应该从哪些方面来优化网站?</a></p>
+<p>另外：</p>
+<ol>
+<li>减少http请求次数<br>80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数。</li>
+<li>减少DNS查询次数<br>DNS查询也消耗响应时间，如果我们的网页内容来自各个不同的domain (比如嵌入了开放广告，引用了外部图片或脚本)，那么客户端首次解析这些domain也需要消耗一定的时间。DNS查询结果缓存在本地系统和浏览器中一段时间，所以DNS查询一般是对首次访问响应速度有所影响。下面是我清空本地dns后访问博客园主页dns的查询请求。</li>
+<li>缓存Ajax<br>Ajax可以帮助我们异步的下载网页内容，但是有些网页内容即使是异步的，用户还是在等待它的返回结果，例如ajax的返回是用户联系人的下拉列表。所以我们还是要注意尽量应用以下规则提高ajax的响应速度。</li>
+<li>延迟加载<br>这里讨论延迟加载需要我们知道我们的网页最初加载需要的最小内容集是什么。剩下的内容就可以推到延迟加载的集合中。<br>Javascript是典型的可以延迟加载内容。一个比较激进的做法是开发网页时先确保网页在没有Javascript的时候也可以基本工作，然后通过延迟加载脚本来完成一些高级的功能。</li>
+</ol>
+<p>另：<br><a href="https://zhuanlan.zhihu.com/p/21417465?refer=no-backend" target="_blank" rel="external">唯快不破：Web 应用的 13 个优化步骤</a></p>
+<h2 id="从输入URL到浏览器显示页面发生了什么"><a href="#从输入URL到浏览器显示页面发生了什么" class="headerlink" title="从输入URL到浏览器显示页面发生了什么?"></a>从输入URL到浏览器显示页面发生了什么?</h2><p>这个过程可以大致分为两个部分：网络通信和页面渲染。</p>
+<ol>
+<li>网络通信<ul>
+<li>在浏览器中输入 url<br>用户输入 url ，例如 <code>http://www.baidu.com</code>。其中 <code>http</code> 为协议， <code>www.baidu.com</code> 为网络地址。一般网络地址可以为域名或IP地址。</li>
+<li>应用层 DNS 解析域名。<br>客户端先检查本地是否有对应的 IP 地址，若找到则返回响应的 IP 地址。若没找到则请求上级 DNS 服务器，直至找到或到根节点。</li>
+<li>应用层客户端发送 HTTP 请求<br>HTTP 请求包括请求报头和请求主体两个部分.</li>
+<li>传输层 TCP 传输报文<br>TCP协议通过“三次握手”等方法保证传输的安全可靠。</li>
+<li>网络层IP协议查询 MAC 地址</li>
+<li>数据到达数据链路层</li>
+<li>服务器接收数据</li>
+<li>服务器响应请求<br>服务接收到客户端发送的HTTP请求后，查找客户端请求的资源，并返回响应报文，响应报文中包括一个重要的信息——状态码。其中比较常见的是200 OK表示请求成功。301表示永久重定向，即请求的资源已经永久转移到新的位置。在返回301状态码的同时，响应报文也会附带重定向的url，客户端接收到后将http请求的url做相应的改变再重新发送。404 not found 表示客户端请求的资源找不到。<br>状态码由三位数字组成：<ul>
+<li>1xx：指示信息–表示请求已接收，继续处理。</li>
+<li>2xx：成功–表示请求已被成功接收、理解、接受。</li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作。</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现。</li>
+<li>5xx：服务器端错误–服务器未能实现合法的请求。</li>
+</ul>
+</li>
+<li>服务器返回相应文件</li>
+</ul>
+</li>
+<li>页面渲染<br>浏览器是一个边解析边渲染的过程。首先浏览器解析HTML文件构建DOM树，然后解析CSS文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上。</li>
+</ol>
+<p>摘自：<a href="http://www.cnblogs.com/kongxy/p/4615226.html" target="_blank" rel="external">从输入URL到浏览器显示页面发生了什么</a><br>另：<br><a href="http://blog.csdn.net/xingxingba123/article/details/52743335" target="_blank" rel="external">一个页面从输入URL到页面加载显示完成，这个过程都发生什么？</a><br><a href="http://www.cnblogs.com/engeng/articles/5943382.html" target="_blank" rel="external">从输入URL到页面加载发生了什么?</a></p>
+<h2 id="如何垂直居中一个浮动元素？"><a href="#如何垂直居中一个浮动元素？" class="headerlink" title="如何垂直居中一个浮动元素？"></a>如何垂直居中一个浮动元素？</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 已知宽高 */</span></div><div class="line"><span class="selector-id">#div1</span>&#123;</div><div class="line">  <span class="attribute">background-color</span>:<span class="number">#6699FF</span>;</div><div class="line">  <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">  <span class="attribute">position</span>: absolute; <span class="comment">/*父元素需要相对定位*/</span></div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">margin-top</span>:-<span class="number">100px</span> ;  </div><div class="line">  <span class="attribute">margin-left</span>: -<span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 未知宽高 */</span></div><div class="line"><span class="selector-id">#div1</span>&#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#6699FF</span>;</div><div class="line">  <span class="attribute">margin</span>:auto;</div><div class="line">  <span class="attribute">position</span>: absolute;<span class="comment">/*父元素需要相对定位*/</span></div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>那么问题来了，如何垂直居中一个<img>?（用更简便的方法。）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*&lt;img&gt;的容器设置如下*/</span></div><div class="line"><span class="selector-id">#container</span> </div><div class="line">&#123;</div><div class="line">    <span class="attribute">display</span>:table-cell;</div><div class="line">    <span class="attribute">text-align</span>:center;</div><div class="line">    <span class="attribute">vertical-align</span>:middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="jquery-常用的选择器"><a href="#jquery-常用的选择器" class="headerlink" title="jquery 常用的选择器"></a>jquery 常用的选择器</h2><ol>
+<li>基本选择器<ol>
+<li>ID选择器  $(“#id”) 获取指定ID的元素</li>
+<li>类选择器  $(“.class”) 获取同一类class的元素</li>
+<li>标签选择器 $(“div”) 获取同一类标签的所有元素</li>
+<li>并集选择器 $(“div,p,li”) 使用逗号分隔，只要符合条件之一就可。获取所有的div、p、li元素</li>
+<li>交集选择器（标签指定式选择器） $(“div.redClass”) 注意选择器1和选择器2之间没有空格，class为redClass的div元素，注意区分后代选择器。</li>
+</ol>
+</li>
+<li>层级选择器<ol>
+<li>子代选择器  $(“ul&gt;li”) 使用&gt;号，获取儿子层级的元素，注意，并不会获取孙子层级的元素</li>
+<li>后代选择器 $(“ul li”) 使用空格，代表后代选择器，获取ul下的所有li元素，包括孙子等</li>
+</ol>
+</li>
+<li>过滤选择器<ol>
+<li>:eq（index） $(“li:eq(2)”).css(“color”, ”red”) 获取到的li元素中，选择索引号为2的元素，索引号index从0开始。</li>
+<li>:odd  $(“li:odd”).css(“color”, ”red”) 获取到的li元素中，选择索引号为奇数的元素</li>
+<li>:even $(“li:even”).css(“color”, ”red”) 获取到的li元素中，选择索引号为偶数的元素</li>
+</ol>
+</li>
+<li>筛选选择器(方法)<ol>
+<li>children(selector)  $(“ul”).children(“li”) 相当于$(“ul&gt;li”)，子类选择器</li>
+<li>find(selector)  $(“ul”).find(“li”) 相当于$(“ul li”),后代选择器</li>
+<li>siblings(selector)  $(“#first”).siblings(“li”) 查找兄弟节点，不包括自己本身。</li>
+<li>parent()  $(“#first”).parent() 查找父亲</li>
+<li>eq(index) $(“li”).eq(2) 相当于$(“li:eq(2)”),index从0开始</li>
+</ol>
+</li>
+</ol>
+<h2 id="bind-算法"><a href="#bind-算法" class="headerlink" title="bind 算法"></a>bind 算法</h2><p>只要掌握核心几点就没问题：</p>
+<ol>
+<li>Function.bind返回的也是一个函数，所以注定发生了闭包，</li>
+<li>在返回的这个函数中去调用一个其他的函数，这其实本质上就是函数钩子(HOOK)</li>
+</ol>
+<p>关于在JS里的函数钩子，我认为只需要维护以下三点即可：</p>
+<ol>
+<li>保持函数的this指向</li>
+<li>保持函数的所有参数都传递到目标函数</li>
+<li>保持函数的返回值</li>
+</ol>
+<p>有了以上这几点，这个函数就非常好写了，下面是MSDN上的标准Polyfill:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (!<span class="built_in">Function</span>.prototype.bind) &#123;</div><div class="line">  <span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span> (<span class="params">oThis</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</div><div class="line">      <span class="comment">// closest thing possible to the ECMAScript 5</span></div><div class="line">      <span class="comment">// internal IsCallable function</span></div><div class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Function.prototype.bind - what is trying to be bound is not callable"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> aArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>), </div><div class="line">      fToBind = <span class="keyword">this</span>, </div><div class="line">      fNOP = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">      fBound = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> fToBind.apply(<span class="keyword">this</span> <span class="keyword">instanceof</span> fNOP </div><div class="line">          ? <span class="keyword">this</span> </div><div class="line">          : oThis || <span class="keyword">this</span>,</div><div class="line">          aArgs.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>)));</div><div class="line">      &#125;;</div><div class="line">    fNOP.prototype = <span class="keyword">this</span>.prototype;</div><div class="line">    fBound.prototype = <span class="keyword">new</span> fNOP();</div><div class="line">    <span class="keyword">return</span> fBound;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>摘自：<a href="http://blog.csdn.net/guoquanyou/article/details/50803742" target="_blank" rel="external"> Web前端面试小记 </a></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>嘛！来啊，互相伤害啊！面试什么的，伤的多惹，并不算什么【傲娇脸】！</p>
+<p>:-P</p>
+
+    </div>
+  </article>
+  
+
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 2hua的个人博客
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives">Writing</a></li>
+        <li><a href="https://github.com/fengdihuahua">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
