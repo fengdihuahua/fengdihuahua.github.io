@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="typedef vs #define#define是 C 指令，用于为各种数据类型定义别名，与typedef类似，但是它们有以下几点不同：
+
+typedef 仅限于为类型定义符号名称，#define 不仅可以为类型定义别名，也能为数值定义别名，比如您可以定义 1 为 ONE。
+typedef 是由编译器执行解释的，#define 语句是由预编译器进行处理的。
+
+用预处理指令#define 声明一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】<面试题>--> 杂七杂八(c/c++)[一]">
+<meta property="og:url" content="fengdi.pro/2017/02/26/15/index.html">
+<meta property="og:site_name" content="2hua的个人博客">
+<meta property="og:description" content="typedef vs #define#define是 C 指令，用于为各种数据类型定义别名，与typedef类似，但是它们有以下几点不同：
+
+typedef 仅限于为类型定义符号名称，#define 不仅可以为类型定义别名，也能为数值定义别名，比如您可以定义 1 为 ONE。
+typedef 是由编译器执行解释的，#define 语句是由预编译器进行处理的。
+
+用预处理指令#define 声明一个">
+<meta property="og:updated_time" content="2017-03-01T08:31:01.673Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【笔记】<面试题>--> 杂七杂八(c/c++)[一]">
+<meta name="twitter:description" content="typedef vs #define#define是 C 指令，用于为各种数据类型定义别名，与typedef类似，但是它们有以下几点不同：
+
+typedef 仅限于为类型定义符号名称，#define 不仅可以为类型定义别名，也能为数值定义别名，比如您可以定义 1 为 ONE。
+typedef 是由编译器执行解释的，#define 语句是由预编译器进行处理的。
+
+用预处理指令#define 声明一个">
+    
+    
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32" />
+    
+    <!-- title -->
+    <title>【笔记】&lt;面试题&gt;--&gt; 杂七杂八(c/c++)[一]</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content post width mx-auto px2 my4">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <span class="top-subtitle">
+          <a href="/archives">Writing</a>
+      </span>
+      
+    <h1 class="posttitle" itemprop="name headline">
+        【笔记】&lt;面试题&gt;--&gt; 杂七杂八(c/c++)[一]
+    </h1>
+
+
+
+      <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">2hua的个人博客</span>
+          </span>
+          
+    <div class="postdate">
+        <time datetime="2017-02-26T04:13:00.000Z" itemprop="datePublished">2017-02-26</time>
+    </div>
+
+
+          
+
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <h2 id="typedef-vs-define"><a href="#typedef-vs-define" class="headerlink" title="typedef vs #define"></a>typedef vs #define</h2><p><code>#define</code>是 C 指令，用于为各种数据类型定义别名，与<code>typedef</code>类似，但是它们有以下几点不同：</p>
+<ul>
+<li>typedef 仅限于为类型定义符号名称，#define 不仅可以为类型定义别名，也能为数值定义别名，比如您可以定义 1 为 ONE。</li>
+<li>typedef 是由编译器执行解释的，#define 语句是由预编译器进行处理的。</li>
+</ul>
+<h2 id="用预处理指令-define-声明一个常数，用以表明1年中有多少秒（忽略闰年问题）"><a href="#用预处理指令-define-声明一个常数，用以表明1年中有多少秒（忽略闰年问题）" class="headerlink" title="用预处理指令#define 声明一个常数，用以表明1年中有多少秒（忽略闰年问题）"></a>用预处理指令#define 声明一个常数，用以表明1年中有多少秒（忽略闰年问题）</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SECONDS_PER_YEAR (60 * 60 * 24 * 365)UL</span></div></pre></td></tr></table></figure>
+<ol>
+<li>#define 语法的基本知识（例如：不能以分号结束，括号的使用，等等）</li>
+<li>懂得预处理器将为你计算常数表达式的值，因此，直接写出你是如何计算一年中有多少秒而不是计算出实际的值，是更清晰而没有代价的。</li>
+<li>意识到这个表达式将使一个16位机的整型数溢出-因此要用到长整型符号L,告诉编译器这个常数是的长整型数。</li>
+<li>如果你在你的表达式中用到UL（表示无符号长整型），那么你有了一个好的起点。记住，第一印象很重要。</li>
+</ol>
+<h2 id="写一个”标准”宏-MIN-，这个宏输入两个参数并返回较小的一个。"><a href="#写一个”标准”宏-MIN-，这个宏输入两个参数并返回较小的一个。" class="headerlink" title="写一个”标准”宏 MIN ，这个宏输入两个参数并返回较小的一个。"></a>写一个”标准”宏 MIN ，这个宏输入两个参数并返回较小的一个。</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN(A,B) ((A) <span class="meta-string">&lt;= (B) ? (A) : (B))</span></span></div></pre></td></tr></table></figure>
+<ol>
+<li>标识#define在宏中应用的基本知识。这是很重要的。因为在嵌入(inline)操作符变为标准C的一部分之前，宏是方便产生嵌入代码的唯一方法，对于嵌入式系统来说，为了能达到要求的性能，嵌入代码经常是必须的方法。</li>
+<li>谨慎地将宏定义中的“参数”和整个宏虹括号括起来。所以严格地将讲，下述解答#define MIN(A,B) (A) &lt;= (B) ? (A) : (B)  以及 #define MIN(A,B) (A &lt;= B ? A : B) 都是不对的。</li>
+<li>除此之外，另一个不好的解答是#define MIN(A,B) ((A) &lt;= (B) ? (A) : (B)); 这个解答在宏定义的后面加了”;”</li>
+<li>防止宏的副作用。宏定义#define MIN(A,B) ((A) &lt;= (B) ? (A) : (B)) 对MIN(<em>p++, b)的作用结果是 ((</em>p++) &lt;= (b) ? (<em>p++) : (</em>p++))这个表示式会产生副作用，指针p会作三次++自增操作。　</li>
+</ol>
+<hr>
+<h3 id="C-中另一个进行代码替换的是-inline，它们之间的区别是："><a href="#C-中另一个进行代码替换的是-inline，它们之间的区别是：" class="headerlink" title="C++中另一个进行代码替换的是#inline，它们之间的区别是："></a>C++中另一个进行代码替换的是#inline，它们之间的区别是：</h3><ol>
+<li>define只是简单的宏替换，通常会产生二义性；而inline会真正地编译到代码中 </li>
+<li>inline函数是否展开由编译器决定，有时候当函数太大时，编译器可能选择不展开相应的函数</li>
+</ol>
+<hr>
+<h2 id="h-头文件中的-ifndef-define-endif-的作用？"><a href="#h-头文件中的-ifndef-define-endif-的作用？" class="headerlink" title=".h 头文件中的 ifndef/define/endif 的作用？"></a>.h 头文件中的 ifndef/define/endif 的作用？</h2><p>防止该头文件被重复引用。</p>
+<h2 id="include-lt-file-h-gt-与-include-quot-file-h-quot-的区别？"><a href="#include-lt-file-h-gt-与-include-quot-file-h-quot-的区别？" class="headerlink" title="#include &lt;file.h&gt; 与 #include &quot;file.h&quot;的区别？"></a><code>#include &lt;file.h&gt;</code> 与 <code>#include &quot;file.h&quot;</code>的区别？</h2><p>如果文件名用尖括号 &lt; 和 &gt; 括起来，表明这个文件是一个工程或者标准头文件，查找过程会检查预定义的目录（在不同的环境下有不同的方法）。我们可以通过设置搜索路径环境变量或命令行选项来修改这些目录。<br>如果文件名用一对引号 “ 和 “ 括起来，则表明该文件是用户提供的头文件，查找该文件时将从当前文件目录开始。<br>当用#include”file.h”时，先搜索当前工作目录，如果没有，再去搜索库，库没有再搜索资源库；<br>当用#include<file.h>时，编译器先从标准库路径开始搜索，如果没再搜索资源库目录，最好搜索当前工作目录。 </file.h></p>
+<h2 id="什么是预编译-何时需要预编译"><a href="#什么是预编译-何时需要预编译" class="headerlink" title="什么是预编译,何时需要预编译?"></a>什么是预编译,何时需要预编译?</h2><ol>
+<li>什么是预编译：<ul>
+<li>预编译又称为预处理 ，是做些代码文本的替换工作。 处理以# 开头的指令 ， 比如拷贝 #include 包含的文件代码，#define 宏定义的替换 ， 条件编译等，就是为编译做的预备工作的阶段。主要处理# 开始的预编译指令，预编译指令指示了在程序正式编译前就由编译器进行的操作，可以放在程序中的任何位置。</li>
+<li>C 编译系统在对程序进行通常的编译之前，首先进行预处理。</li>
+</ul>
+</li>
+<li>C 提供的预处理功能主要有以下三种：<ul>
+<li>宏定义　</li>
+<li>文件包含　</li>
+<li>条件编译</li>
+</ul>
+</li>
+<li>何时需要预编译：<ul>
+<li>总是使用不经常改动的大型代码体。</li>
+<li>程序由多个模块组成，所有模块都使用一组标准的包含文件和相同的编译选项。在这种情况下，可以将所有包含文件预编译为一个“预编译头”。</li>
+</ul>
+</li>
+</ol>
+<h2 id="关键字-const-是什么含意？"><a href="#关键字-const-是什么含意？" class="headerlink" title="关键字 const 是什么含意？"></a>关键字 const 是什么含意？</h2><ol>
+<li>欲阻止一个变量被改变，可以使用 const 关键字。在定义该 const 变量时，通常需要对它进行初始化，因为以后就没有机会再去改变它了；</li>
+<li>对指针来说，可以指定指针本身为 const，也可以指定指针所指的数据为 const，或二者同时指定为 const；</li>
+<li>在一个函数声明中，const 可以修饰形参，表明它是一个输入参数，在函数内部不能改变其值；</li>
+<li>对于类的成员函数，若指定其为 const 类型，则表明其是一个常函数，不能修改类的成员变量；</li>
+<li>对于类的成员函数，有时候必须指定其返回值为 const 类型，以使得其返回值不为“左值”。</li>
+</ol>
+<p>参考：<br><a href="http://www.jianshu.com/p/5e94c45efe63" target="_blank" rel="external"> 问题[○○]：关键字const有什么含意？修饰类呢？ </a><br><a href="http://blog.csdn.net/zhoukangli/article/details/8035456" target="_blank" rel="external"> 关键字const有什么含义？</a><br><a href="http://www.cnblogs.com/hktk/archive/2012/09/19/2693959.html" target="_blank" rel="external"> c语言中const关键字详解 </a><br><a href="http://blog.csdn.net/qq_29350001/article/details/53991550" target="_blank" rel="external"> C语言再学习 – 关键字const </a></p>
+<h2 id="请说出const与-define-相比，有何优点？"><a href="#请说出const与-define-相比，有何优点？" class="headerlink" title="请说出const与#define 相比，有何优点？"></a>请说出const与#define 相比，有何优点？</h2><p>Const作用：定义常量、修饰函数参数、修饰函数返回值三个作用。被Const修饰的东西都受到强制保护，可以预防意外的变动，能提高程序的健壮性。 </p>
+<ol>
+<li>const 常量有数据类型，而宏常量没有数据类型。编译器可以对前者进行类型安全检查。而对后者只进行字符替换，没有类型安全检查，并且在字符替换可能会产生意料不到的错误。  </li>
+<li>有些集成化的调试工具可以对const 常量进行调试，但是不能对宏常量进行调试。</li>
+</ol>
+<h2 id="关键字-volatile-有什么含意-并给出三个不同的例子。"><a href="#关键字-volatile-有什么含意-并给出三个不同的例子。" class="headerlink" title="关键字 volatile 有什么含意 并给出三个不同的例子。"></a>关键字 volatile 有什么含意 并给出三个不同的例子。</h2><p>一个定义为 volatile 的变量就是说它可能会意想不到的改变（改变它的情况有很多，例如操作系统，硬件，线程），这样，编译器就不会去假设这个值，也就是说，当优化器读到这个值时就会小心翼翼的去重新读取这个变量的值，而不是使用保存在寄存器中的备份。（当使用到用类型修饰符声明的变量时，系统总是从它所在的内存读取，既使系统刚从这里读取过）。</p>
+<p>Volatile 修饰符告诉编译程序不要对该变量所参与的操作进行优化。</p>
+<p>例子:</p>
+<ol>
+<li><p>并行设备的硬件寄存器。存储器映射的硬件寄存器通常加 volatile 。<br>例如状态寄存器。以为设备寄存器会在你的程序不知道或者不介入的时候发生改变，那是因为设备寄存器可以被外设硬件修改。相反，变量中的不会变。设备寄存器的内容是易失的，或者在不注意的时候被修改。当声明指向设备寄存器的指针时一定要用 volatile 它会告诉编译器不要对存储在这个地址的数据进行假设，编译器在优化这个变量时应该把它看作编译时未知的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> IOPMOD (*((Volatile unsigned *)(SYSCFG + 0x5000)))</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>一个中断服务程序中修改的供其他程序检测的变量。</p>
+</li>
+<li>多线程应用中被几个任务共享的变量。</li>
+</ol>
+<p>参考：<br><a href="http://blog.csdn.net/zhang_yin_liang/article/details/52015681" target="_blank" rel="external"> 关键字volatile有什么含意 并给出三个不同的例子 </a><br><a href="http://www.cnblogs.com/smile-at-you/archive/2013/10/08/3357910.html" target="_blank" rel="external"> 关键字volatile有什么含意?并给出三个不同的例子。</a></p>
+<hr>
+<h3 id="一个变量可以既是const-还是volatile吗？解释为什么？"><a href="#一个变量可以既是const-还是volatile吗？解释为什么？" class="headerlink" title="一个变量可以既是const 还是volatile吗？解释为什么？"></a>一个变量可以既是const 还是volatile吗？解释为什么？</h3><p>可以，例如状态寄存器。它首先应该是volatile 因为它可以出乎意料的修改，而且应该是const，这个寄存器程序不应该去修改。</p>
+<h3 id="一个指针可以说volatile的吗？"><a href="#一个指针可以说volatile的吗？" class="headerlink" title="一个指针可以说volatile的吗？"></a>一个指针可以说volatile的吗？</h3><p>可以，例如中断服务子程序中修改一个指向buffer的指针。</p>
+<h3 id="下列代码有错误吗"><a href="#下列代码有错误吗" class="headerlink" title="下列代码有错误吗?"></a>下列代码有错误吗?</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function">Int <span class="title">square</span><span class="params">(<span class="keyword">volatile</span> <span class="keyword">int</span> *ptr)</span></span></div><div class="line">&#123;</div><div class="line">  Return *ptr **ptr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>由于ptr声明为volatile类型的所以编译器可能编译完的程序是：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">volatile</span> <span class="keyword">int</span> *ptr)</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">int</span> a,b;</div><div class="line">  a = *ptr;</div><div class="line">  b = *ptr;</div><div class="line">  <span class="keyword">return</span> a * b;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>则得出的结果可能不是想要的结果；</p>
+<p>正确的程序这样写：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">long</span> <span class="title">square</span><span class="params">(<span class="keyword">volatile</span> <span class="keyword">int</span> *ptr)</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">int</span> a;</div><div class="line">  a = *ptr;</div><div class="line">  <span class="keyword">return</span> a * a;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="关键字-static-的作用是什么？"><a href="#关键字-static-的作用是什么？" class="headerlink" title="关键字 static 的作用是什么？"></a>关键字 static 的作用是什么？</h2><p>在 C 语言中，关键字 static 有三个明显的作用：</p>
+<ol>
+<li>在函数体，一个被声明为静态的变量在这一函数被调用过程中维持其值不变。</li>
+<li>在模块内（但在函数体外），一个被声明为静态的变量可以被模块内所用函数访问，但不能被模块外其它函数访问。它是一个本地的全局变量。</li>
+<li>在模块内，一个被声明为静态的函数只可被这一模块内的其它函数调用。那就是，这个函数被限制在声明它的模块的本地范围内使用。(本地化数据和代码范围)</li>
+</ol>
+<h2 id="static全局变量与普通全局变量的区别？static局部变量与普通局部变量的区别？static全局函数与普通全局函数的区别？"><a href="#static全局变量与普通全局变量的区别？static局部变量与普通局部变量的区别？static全局函数与普通全局函数的区别？" class="headerlink" title="static全局变量与普通全局变量的区别？static局部变量与普通局部变量的区别？static全局函数与普通全局函数的区别？"></a>static全局变量与普通全局变量的区别？static局部变量与普通局部变量的区别？static全局函数与普通全局函数的区别？</h2><p>全局变量(外部变量)的说明之前再冠以static 就构成了静态的全局变量。全局变量本身就是静态存储方式，静态全局变量当然也是静态存储方式。这两者在存储方式上并无不同。这两者的区别虽在于非静态全局变量的作用域是整个源程序，当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的。而静态全局变量则限制了其作用域，即只在定义该变量的源文件内有效，在同一源程序的其它源文件中不能使用它。由于静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用，因此可以避免在其它源文件中引起错误。<br>从以上分析可以看出，把局部变量改变为静态变量后是改变了它的存储方式即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。</p>
+<p>static函数与普通函数作用域不同。static函数仅在本文件中使用。只在当前源文件中使用的函数应该说明为内部函数(static)，内部函数应该在当前源文件中说明和定义。对于可在当前源文件以外使用的函数，应该在一个头文件中说明，要使用这些函数的源文件要包含这个头文件</p>
+<ul>
+<li>static全局变量与普通全局变量有什么区别：static全局变量只初使化一次，防止在其他文件单元中被引用;</li>
+<li>static局部变量和普通局部变量有什么区别：static局部变量只被初始化一次，下一次依据上一次结果值；</li>
+<li>static函数与普通函数有什么区别：static函数在内存中只有一份，普通函数在每个被调用中维持一份拷贝</li>
+</ul>
+<h2 id="全局变量和局部变量在内存中是否有区别？如果有，是什么区别？"><a href="#全局变量和局部变量在内存中是否有区别？如果有，是什么区别？" class="headerlink" title="全局变量和局部变量在内存中是否有区别？如果有，是什么区别？"></a>全局变量和局部变量在内存中是否有区别？如果有，是什么区别？</h2><p>全局变量保存在内存的全局存储区中，占用静态的存储单元；局部变量保存在栈中，只有在所在函数被调用时才动态地为变量分配存储单元。</p>
+<hr>
+<h3 id="C语言经过编译之后将内存分为以下几个区域："><a href="#C语言经过编译之后将内存分为以下几个区域：" class="headerlink" title="C语言经过编译之后将内存分为以下几个区域："></a>C语言经过编译之后将内存分为以下几个区域：</h3><ol>
+<li>栈（stack）：由编译器进行管理，自动分配和释放，存放函数调用过程中的各种参数、局部变量、返回值以及函数返回地址。操作方式类似数据结构中的栈。</li>
+<li>堆（heap）：用于程序动态申请分配和释放空间。C语言中的malloc和free，C++中的new和delete均是在堆中进行的。正常情况下，程序员申请的空间在使用结束后应该释放，若程序员没有释放空间，则程序结束时系统自动回收。注意：这里的“堆”并不是数据结构中的“堆”。</li>
+<li>全局（静态）存储区：分为DATA段和BSS段。DATA段（全局初始化区）存放初始化的全局变量和静态变量；BSS段（全局未初始化区）存放未初始化的全局变量和静态变量。程序运行结束时自动释放。其中BBS段在程序执行之前会被系统自动清0，所以未初始化的全局变量和静态变量在程序执行之前已经为0。</li>
+<li>文字常量区：存放常量字符串。程序结束后由系统释放。</li>
+<li>程序代码区：存放程序的二进制代码。</li>
+</ol>
+<p>例子程序<br>这是一个前辈写的，非常详细<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.cpp </span></div><div class="line"><span class="keyword">int</span> a = <span class="number">0</span>; <span class="comment">//全局初始化区 </span></div><div class="line"><span class="keyword">char</span> *p1; <span class="comment">//全局未初始化区 </span></div><div class="line">main() </div><div class="line">&#123; </div><div class="line"><span class="keyword">int</span> b; <span class="comment">//栈 </span></div><div class="line"><span class="keyword">char</span> s[] = <span class="string">"abc"</span>; <span class="comment">//栈 </span></div><div class="line"><span class="keyword">char</span> *p2; <span class="comment">//栈 </span></div><div class="line"><span class="keyword">char</span> *p3 = <span class="string">"123456"</span>; <span class="comment">//123456/0在常量区，p3在栈上，可否看成是一种映射。 </span></div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> c =<span class="number">0</span>； <span class="comment">//全局（静态）初始化区 </span></div><div class="line">p1 = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span>); </div><div class="line">p2 = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">20</span>); </div><div class="line"><span class="comment">//分配得来得10和20字节的区域就在堆区。 </span></div><div class="line"><span class="built_in">strcpy</span>(p1, <span class="string">"123456"</span>); <span class="comment">//123456/0放在常量区，编译器可能会将它与p3所指向的"123456"优化成一个地方，一个常量区块可能对应（映射）多个变量区，优化内存。 </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>显然，C语言中的全局变量和局部变量在内存中是有区别的。C语言中的全局变量包括外部变量和静态变量，均是保存在全局存储区中，占用永久性的存储单元；局部变量，即自动变量，保存在栈中，只有在所在函数被调用时才由系统动态在栈中分配临时性的存储单元。</p>
+<h2 id="局部变量能否和全局变量重名？"><a href="#局部变量能否和全局变量重名？" class="headerlink" title="局部变量能否和全局变量重名？"></a>局部变量能否和全局变量重名？</h2><p>能，局部会屏蔽全局。要用全局变量，需要使用”::”。局部变量可以与全局变量同名，在函数内引用这个变量时，会用到同名的局部变量，而不会用到全局变量。对于有些编译器而言，在同一个函数内可以定义多个同名的局部变量，比如在两个循环体内都定义一个同名的局部变量，而那个局部变量的作用域就在那个循环体内。</p>
+<h2 id="如何引用一个已经定义过的全局变量？"><a href="#如何引用一个已经定义过的全局变量？" class="headerlink" title="如何引用一个已经定义过的全局变量？"></a>如何引用一个已经定义过的全局变量？</h2><p>可以用引用头文件的方式，也可以用extern关键字。<br>如果用引用头文件方式来引用某个在头文件中声明的全局变量，假定你将那个变量写错了，那么在编译期间会报错，如果你用 extern 方式引用时，假定你犯了同样的错误，那么在编译期间不会报错，而在连接期间报错。</p>
+<h2 id="全局变量可不可以定义在可被多个-C-文件包含的头文件中？为什么？"><a href="#全局变量可不可以定义在可被多个-C-文件包含的头文件中？为什么？" class="headerlink" title="全局变量可不可以定义在可被多个 .C 文件包含的头文件中？为什么？"></a>全局变量可不可以定义在可被多个 .C 文件包含的头文件中？为什么？</h2><p>可以，在不同的 C 文件中以 static 形式来声明同名全局变量。<br>可以在不同的 C 文件中声明同名的全局变量，前提是其中只能有一个C文件中对此变量赋初值，此时连接不会出错。</p>
+<h2 id="堆栈溢出一般是由什么原因导致的？"><a href="#堆栈溢出一般是由什么原因导致的？" class="headerlink" title="堆栈溢出一般是由什么原因导致的？"></a>堆栈溢出一般是由什么原因导致的？</h2><ol>
+<li>没有回收垃圾资源</li>
+<li>层次太深的递归调用</li>
+<li>数组越界 </li>
+</ol>
+<h2 id="队列和栈有什么区别？"><a href="#队列和栈有什么区别？" class="headerlink" title="队列和栈有什么区别？"></a>队列和栈有什么区别？</h2><p>队列先进先出，栈后进先出</p>
+<h2 id="堆（heap）和栈-stack-的区别？"><a href="#堆（heap）和栈-stack-的区别？" class="headerlink" title="堆（heap）和栈(stack)的区别？"></a>堆（heap）和栈(stack)的区别？</h2><ol>
+<li><p>申请方式</p>
+<ol>
+<li>栈（satck）:由系统自动分配。例如，声明在函数中一个局部变量int b;系统自动在栈中为b开辟空间。</li>
+<li><p>堆（heap）:需程序员自己申请（调用malloc,realloc,calloc）,并指明大小，并由程序员进行释放。容易产生memory leak.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span>  p;</div><div class="line">p = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</div></pre></td></tr></table></figure>
+<p>但是，p本身是在栈中。</p>
+</li>
+</ol>
+</li>
+<li>申请大小的限制<ol>
+<li>栈：在windows下栈是向底地址扩展的数据结构，是一块连续的内存区域(它的生长方向与内存的生长方向相反)。栈的大小是固定的。如果申请的空间超过栈的剩余空间时，将提示overflow。</li>
+<li>堆：堆是高地址扩展的数据结构（它的生长方向与内存的生长方向相同），是不连续的内存区域。这是由于系统使用链表来存储空闲内存地址的，自然是不连续的，而链表的遍历方向是由底地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。</li>
+</ol>
+</li>
+<li>系统响应：<ol>
+<li>栈：只要栈的空间大于所申请空间，系统将为程序提供内存，否则将报异常提示栈溢出。</li>
+<li>堆：首先应该知道操作系统有一个记录空闲内存地址的链表，但系统收到程序的申请时，会遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲链表中删除，并将该结点的空间分配给程序，另外，对于大多数系统，会在这块内存空间中的首地址处记录本次分配的大小，这样，代码中的free语句才能正确的释放本内存空间。另外，找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。<br>说明：对于堆来讲，频繁的new/delete势必会造成内存空间的不连续，从而造成大量的碎片，使程序效率降低。对于栈来讲，则不会存在这个问题，</li>
+</ol>
+</li>
+<li>申请效率<ol>
+<li>栈由系统自动分配，速度快。但程序员是无法控制的</li>
+<li>堆是由malloc分配的内存，一般速度比较慢，而且容易产生碎片，不过用起来最方便。</li>
+</ol>
+</li>
+<li>堆和栈中的存储内容<ol>
+<li>栈：在函数调用时，第一个进栈的主函数中后的下一条语句的地址，然后是函数的各个参数，参数是从右往左入栈的，然后是函数中的局部变量。注：静态变量是不入栈的。<br>当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续执行。</li>
+<li>堆：一般是在堆的头部用一个字节存放堆的大小。</li>
+</ol>
+</li>
+<li>存取效率<ol>
+<li>堆：char *s1=”hellow tigerjibo”;是在编译是就确定的</li>
+<li>栈：char s1[]=”hellow tigerjibo”;是在运行时赋值的；用数组比用指针速度更快一些，指针在底层汇编中需要用edx寄存器中转一下，而数组在栈上读取。<br>补充：栈是机器系统提供的数据结构，计算机会在底层对栈提供支持：分配专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这就决定了栈的效率比较高。堆则是C/C++函数库提供的，它的机制是很复杂的，例如为了分配一块内存，库函数会按照一定的算法（具体的算法可以参考数据结构/操作系统）在堆内存中搜索可用的足够大小的空间，如果没有足够大小的空间（可能是由于内存碎片太多），就有可能调用系统功能去增加程序数据段的内存空间，这样就有机会分到足够大小的内存，然后进行返回。显然，堆的效率比栈要低得多。</li>
+</ol>
+</li>
+<li>分配方式：<ol>
+<li>堆都是动态分配的，没有静态分配的堆。</li>
+<li>栈有两种分配方式：静态分配和动态分配。静态分配是编译器完成的，比如局部变量的分配。动态分配由alloca函数进行分配，但是栈的动态分配和堆是不同的。它的动态分配是由编译器进行释放，无需手工实现。</li>
+</ol>
+</li>
+</ol>
+<p>参考:<br><a href="http://blog.csdn.net/hairetz/article/details/4141043" target="_blank" rel="external"> 堆和栈的区别（转过无数次的文章）</a><br><a href="http://blog.csdn.net/tigerjibo/article/details/7423728" target="_blank" rel="external"> C语言中堆和栈的区别 </a></p>
+<h2 id="简述数组与指针的区别？"><a href="#简述数组与指针的区别？" class="headerlink" title="简述数组与指针的区别？"></a>简述数组与指针的区别？</h2><p>数组要么在静态存储区被创建（如全局数组），要么在栈上被创建。指针可以随时指向任意类型的内存块。 </p>
+<ol>
+<li><p>修改内容上的差别 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> a[] = “hello”; </div><div class="line">a[<span class="number">0</span>] = ‘X’; </div><div class="line"><span class="keyword">char</span> *p = “world”; <span class="comment">// 注意p 指向常量字符串 </span></div><div class="line">p[<span class="number">0</span>] = ‘X’; <span class="comment">// 编译器不能发现该错误，运行时错误</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>计算数组和指针的内存容量<br>用运算符 sizeof 可以计算出数组的容量（字节数）。sizeof(p), p 为指针得到的是一个 指针变量的字节数，而不是p 所指的内存容量。C++/C 语言没有办法知道指针所指的内存容量，除非在申请内存时记住它。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> a[] = “hello world”; </div><div class="line"><span class="keyword">char</span> *p = a; </div><div class="line"><span class="built_in">cout</span>&lt;&lt; <span class="keyword">sizeof</span>(a) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 12 字节 </span></div><div class="line"><span class="built_in">cout</span>&lt;&lt; <span class="keyword">sizeof</span>(p) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 4 字节</span></div></pre></td></tr></table></figure>
+<p>注意当数组作为函数的参数进行传递时，该数组自动退化为同类型的指针。 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Func</span><span class="params">(<span class="keyword">char</span> a[<span class="number">100</span>])</span> </span>&#123; </div><div class="line">  <span class="built_in">cout</span>&lt;&lt; <span class="keyword">sizeof</span>(a) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 4 字节而不是100 字节 </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="描述内存分配方式以及它们的区别"><a href="#描述内存分配方式以及它们的区别" class="headerlink" title="描述内存分配方式以及它们的区别?"></a>描述内存分配方式以及它们的区别?</h2><ol>
+<li>从静态存储区域分配。内存在程序编译的时候就已经分配好，这块内存在程序的整个运行期间都存在。例如全局变量，static 变量。 </li>
+<li>在栈上创建。在执行函数时，函数内局部变量的存储单元都可以在栈上创建，函数执行结束时这些存储单元自动被释放。栈内存分配运算内置于处理器的指令集。 </li>
+<li>从堆上分配，亦称动态内存分配。程序在运行的时候用malloc 或new 申请任意多少的内存，程序员自己负责在何时用free 或delete 释放内存。动态内存的生存期由程序员决定，使用非常灵活，但问题也最多。</li>
+</ol>
+<h2 id="描述实时系统的基本特性"><a href="#描述实时系统的基本特性" class="headerlink" title="描述实时系统的基本特性"></a>描述实时系统的基本特性</h2><p>在特定时间内完成特定的任务，实时性与可靠性。</p>
+<h2 id="什么是平衡二叉树？"><a href="#什么是平衡二叉树？" class="headerlink" title="什么是平衡二叉树？"></a>什么是平衡二叉树？</h2><p>左右子树都是平衡二叉树且左右子树的深度差值的绝对值不大于1。</p>
+<h2 id="冒泡排序算法的时间复杂度是什么？"><a href="#冒泡排序算法的时间复杂度是什么？" class="headerlink" title="冒泡排序算法的时间复杂度是什么？"></a>冒泡排序算法的时间复杂度是什么？</h2><p>O(n^2)</p>
+<h2 id="三种基本的数据模型"><a href="#三种基本的数据模型" class="headerlink" title="三种基本的数据模型"></a>三种基本的数据模型</h2><p>按照数据结构类型的不同，将数据模型划分为层次模型、网状模型和关系模型。 </p>
+<h2 id="结构与联合有和区别？"><a href="#结构与联合有和区别？" class="headerlink" title="结构与联合有和区别？"></a>结构与联合有和区别？</h2><ol>
+<li>结构和联合都是由多个不同的数据类型成员组成, 但在任何同一时刻, 联合中只存放了一个被选中的成员（所有成员共用一块地址空间）, 而结构的所有成员都存在（不同成员的存放地址不同）。  </li>
+<li>对于联合的不同成员赋值, 将会对其它成员重写, 原来成员的值就不存在了, 而对于结构的不同成员赋值是互不影响的。</li>
+</ol>
+<hr>
+<ol>
+<li><p>结构体的定义</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> 结构体名</div><div class="line">&#123;</div><div class="line">  数据类型<span class="number">1</span> 成员名<span class="number">1</span>;</div><div class="line">  数据类型<span class="number">2</span> 成员名<span class="number">2</span>;</div><div class="line">  ......</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>联合体的定义</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">union</span> 联合体名</div><div class="line">&#123;</div><div class="line">  数据类型<span class="number">1</span> 成员名<span class="number">1</span>;</div><div class="line">  数据类型<span class="number">2</span> 成员名<span class="number">2</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="不能做-switch-的参数类型"><a href="#不能做-switch-的参数类型" class="headerlink" title="不能做 switch() 的参数类型"></a>不能做 switch() 的参数类型</h2><ol>
+<li>C/C++中：<ul>
+<li>支持byte,char,short,int,long,bool,整数类型和枚举类型。</li>
+<li>不支持float，double，string</li>
+</ul>
+</li>
+<li>Java中：<ul>
+<li>boolean类型</li>
+<li>String类型是java7开始支持</li>
+</ul>
+</li>
+</ol>
+<h2 id="语句-for-1-有什么问题？它是什么意思？"><a href="#语句-for-1-有什么问题？它是什么意思？" class="headerlink" title="语句 for( ;1 ; ) 有什么问题？它是什么意思？"></a>语句 <code>for( ;1 ; )</code> 有什么问题？它是什么意思？</h2><p>他的意思是循环条件永远为真，不停地进行循环操作，除非循环体中有强制退出循环的语句才能终止循环，其实功能就相当于while(1)。</p>
+<h2 id="do…while和while…do有什么区别？"><a href="#do…while和while…do有什么区别？" class="headerlink" title="do…while和while…do有什么区别？"></a>do…while和while…do有什么区别？</h2><p>前一个循环一遍再判断，后一个判断以后再循环。</p>
+<hr>
+<h3 id="for-while-do-while三种循环有什么特点和区别"><a href="#for-while-do-while三种循环有什么特点和区别" class="headerlink" title="for while do-while三种循环有什么特点和区别:"></a>for while do-while三种循环有什么特点和区别:</h3><p>这三种都是循环语句,其中,for和while语句基本上是一样的,也可以互相替换。<br>但从使用经验上来说,for循环通常用在有固定循环次数的循环语句中,而while语句则用在满足某种条件时才循环的语句中,它们都是先判断条件是否满足再执行语句,所以,如果一开始条件就不满足,循环语句有可能一次也不执行.do-while语句和while基本相同,所不同的是,它先执行循环语句,再判断条件是否满足,也就是说,循环语句至少能执行一次.</p>
+<hr>
+<h2 id="c-中什么函数不能声明为虚函数？"><a href="#c-中什么函数不能声明为虚函数？" class="headerlink" title="c++ 中什么函数不能声明为虚函数？"></a>c++ 中什么函数不能声明为虚函数？</h2><p>常见的不不能声明为虚函数的有：普通函数（非成员函数）；静态成员函数；内联成员函数；构造函数；友元函数。</p>
+<ol>
+<li>为什么C++不支持普通函数为虚函数？<br>普通函数（非成员函数）只能被overload，不能被override，声明为虚函数也没有什么意思，因此编译器会在编译时邦定函数。多态的运行期行为体现在虚函数上，虚函数通过继承方式来体现出多态作用，顶层函数不属于成员函数，是不能被继承的</li>
+<li>为什么C++不支持构造函数为虚函数？<br>主要是从语义上考虑，所以不支持。因为构造函数本来就是为了明确初始化对象成员才产生的，然而virtual function主要是为了再不完全了解细节的情况下也能正确处理对象。另外，virtual函数是在不同类型的对象产生不同的动作，现在对象还没有产生，如何使用virtual函数来完成你想完成的动作。（这不就是典型的悖论）<ul>
+<li>构造函数不能被继承，因而不能声明为virtual函数</li>
+<li>构造函数一般是用来初始化对象，只有在一个对象生成之后，才能发挥多态作用，如果将构造函数声明为virtual函数，则表现为在对象还没有生成的情况下酒使用了多态机制，因而是行不通的。</li>
+</ul>
+</li>
+<li>为什么C++不支持内联成员函数为虚函数？<br>内联函数就是为了在代码中直接展开，减少函数调用花费的代价，虚函数是为了在继承后对象能够准确的执行自己的动作，这是不可能统一的。（再说了，inline函数在编译时被展开，虚函数在运行时才能动态的邦定函数）。inline函数和virtual函数有着本质的区别，inline函数是在程序被编译时就展开，在函数调用处用整个函数体去替换，而virtual函数是在运行期才能够确定如何去调用的，因而inline函数体现的是一种编译期机制，virtual函数体现的是一种运行期机制。此外，一切virtual函数都不可能是inline函数。<br>4．为什么C++不支持静态成员函数为虚函数？<br>静态成员函数对于每个类来说只有一份代码，所有的对象都共享这一份代码，他也没有要动态邦定的必要性。不能被继承，只属于该类。<br>5．为什么C++不支持友元函数为虚函数？<br>因为C++不支持友元函数的继承，对于没有继承特性的函数没有虚函数的说法。友元函数不属于类的成员函数，不能被继承。<br>常见的不不能声明为虚函数的有：普通函数（非成员函数）；静态成员函数；内联成员函数；构造函数；友元函数。</li>
+</ol>
+<hr>
+<h3 id="设置虚函数须注意："><a href="#设置虚函数须注意：" class="headerlink" title="设置虚函数须注意："></a>设置虚函数须注意：</h3><ol>
+<li>只有类的成员函数才能说明为虚函数； </li>
+<li>静态成员函数不能是虚函数； </li>
+<li>内联函数不能为虚函数； </li>
+<li>构造函数不能是虚函数； </li>
+<li>析构函数可以是虚函数，而且通常声明为虚函数。</li>
+</ol>
+<hr>
+<h2 id="c-中引用与指针的区别是什么？"><a href="#c-中引用与指针的区别是什么？" class="headerlink" title="c++中引用与指针的区别是什么？"></a>c++中引用与指针的区别是什么？</h2><p>相同点：</p>
+<ol>
+<li>都是地址的概念；</li>
+<li>指针指向一块内存，它的内容是所指内存的地址；而引用则是某块内存的别名。</li>
+</ol>
+<p>不同点：</p>
+<ol>
+<li>指针是一个实体，而引用仅是个别名；</li>
+<li>引用只能在定义时被初始化一次，之后不可变；指针可变；引用“从一而终”，指针可以“见异思迁”；</li>
+<li>引用不能为空，指针可以为空；</li>
+<li>“sizeof引用”得到的是所指向的变量(对象)的大小，而“sizeof指针”得到的是指针本身的大小；</li>
+<li>指针和引用的自增(++)运算意义不一样；</li>
+<li>引用是类型安全的，而指针不是(引用比指针多了类型检搜索查)</li>
+</ol>
+
+    </div>
+  </article>
+  
+
+</div>
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 2hua的个人博客
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives">Writing</a></li>
+        <li><a href="https://github.com/fengdihuahua">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

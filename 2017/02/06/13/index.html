@@ -17,7 +17,7 @@
 
 低耦合：View可以独立于Model变化和修改，同一个ViewModel可以被多个Vie">
 <meta property="og:image" content="fengdi.pro/images/MVVM.PNG">
-<meta property="og:updated_time" content="2017-02-19T06:03:47.238Z">
+<meta property="og:updated_time" content="2017-02-19T06:27:35.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【笔记】<angular>--> angular 面试题总结">
 <meta name="twitter:description" content="angularjs 是 mvc 还是 mvvm 框架?首先阐述下你对mvc和mvvm的理解首先为什么我们会需要MVC？因为随着代码规模越来越大，切分职责是大势所趋，还有为了后期维护方便，修改一块功能不影响其他功能。还有为了复用，因为很多逻辑是一样的。而MVC只是手段，终极目标是模块化和复用。mvvm的优点:
@@ -126,7 +126,15 @@
 <li>快捷的get请求</li>
 <li>响应对象<br>传送门：<a href="http://www.2cto.com/kf/201506/405137.html" target="_blank" rel="external">http://www.2cto.com/kf/201506/405137.html</a></li>
 </ol>
-<h2 id="单页应用有哪些优缺点？"><a href="#单页应用有哪些优缺点？" class="headerlink" title="单页应用有哪些优缺点？"></a>单页应用有哪些优缺点？</h2><p>优点：</p>
+<h2 id="单页应用有哪些优缺点？"><a href="#单页应用有哪些优缺点？" class="headerlink" title="单页应用有哪些优缺点？"></a>单页应用有哪些优缺点？</h2><p>单页Web应用（single page web application，SPA），就是只有一张Web页面的应用。单页应用程序 (SPA) 是加载单个HTML 页面并在用户与应用程序交互时动态更新该页面的Web应用程序。 浏览器一开始会加载必需的HTML、CSS和JavaScript，所有的操作都在这张页面上完成，都由JavaScript来控制。因此，对单页应用来说模块化的开发和设计显得相当重要。</p>
+<ul>
+<li>速度：更好的用户体验，让用户在web app感受native app的速度和流畅，</li>
+<li>MVC：经典MVC开发模式，前后端各负其责。</li>
+<li>ajax：重前端，业务逻辑全部在本地操作，数据都需要通过AJAX同步、提交。</li>
+<li>路由：在URL中采用#号来作为当前视图的地址,改变#号后的参数，页面并不会重载。</li>
+</ul>
+<p>单页Web应用（single page web application，SPA）是当今网站开发技术的弄潮儿，很多传统网站都在或者已经转型为单页Web应用，新的单页Web应用网站（包括移动平台上的）也如雨后春笋般涌现在人们的面前，如Gmail、Evernote、Trello等。如果你是一名Web开发人员，却还没开发过或者甚至是没有听说过单页应用，那你已经Out很久了。<br>单页Web应用和前端工程师们息息相关，因为主要的变革发生在浏览器端，用到的技术其实还是HTML+CSS+JavaScript，所有的浏览器都原生支持，当然有的浏览器因为具备一些高级特性，从而使得单页Web应用的用户体验更上一层楼。关于单页应用的优点和缺点，网上讲解的文章有很多，这里就不展开论述了。 单页Web应用，顾名思义，就是只有一张Web页面的应用。浏览器一开始会加载必需的HTML、CSS和JavaScript，之后所有的操作都在这张页面上完成，这一切都由JavaScript来控制。因此，单页Web应用会包含大量的JavaScript代码，复杂度可想而知，模块化开发和设计的重要性不言而喻。</p>
+<p>优点：</p>
 <ol>
 <li>分离前后端关注点，前端负责界面显示，后端负责数据存储和计算，各司其职，不会把前后端的逻辑混杂在一起；</li>
 <li>减轻服务器压力，服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍；</li>
